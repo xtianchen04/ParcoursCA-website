@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/affilies", "destination": "/affilies.html" },
+    { "source": "/predepart", "destination": "/predepart.html" }
+  ]
+}
