@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Préparez votre arrivée au Canada — checklist documents, choix de province, 30 premiers jours, démarches fiscales. ParcoursCA, votre compagnon de départ." />
+  <title>Pré-Départ Canada — ParcoursCA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Sora:wght@300;400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ═══════════════════════════════════════════════ PRÉ-DÉPART PAGE */
+
+    .hero-predepart {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      padding-top: 68px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-predepart::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(14,165,233,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-predepart-inner {
+      position: relative;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: clamp(80px,10vw,120px) clamp(20px,4vw,48px) clamp(60px,8vw,100px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 28px;
+    }
+    .predepart-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #38bdf8;
+    }
+    .predepart-badge-dot {
+      width: 8px; height: 8px;
+      background: #0ea5e9;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .hero-predepart h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 820px;
+    }
+    .hero-predepart h1 span { color: #38bdf8; }
+    .hero-predepart-sub {
+      font-size: clamp(1rem,1.8vw,1.15rem);
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 620px;
+    }
+    .impact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      background: rgba(14,165,233,0.06);
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 20px;
+      padding: 24px 40px;
+    }
+    .impact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .impact-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #38bdf8;
+      line-height: 1;
+    }
+    .impact-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+    .impact-sep {
+      width: 1px; height: 52px;
+      background: var(--border);
+    }
+
+    /* ── STORY SECTION ─────────────────────────────────────── */
+    .story-section {
+      background: var(--navy-light);
+      padding: clamp(60px,8vw,96px) 0;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+    .story-card {
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .story-card.without {
+      background: rgba(239,68,68,0.05);
+      border: 1px solid rgba(239,68,68,0.2);
+    }
+    .story-card.with {
+      background: rgba(16,185,129,0.05);
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+    .story-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .story-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .story-icon.red { background: rgba(239,68,68,0.15); color: #f87171; }
+    .story-icon.green { background: rgba(16,185,129,0.15); color: #34d399; }
+    .story-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .story-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .story-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .story-steps li .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .dot.red { background: #f87171; }
+    .dot.green { background: #34d399; }
+
+    /* ── MODULES ───────────────────────────────────────────── */
+    .modules-section {
+      padding: clamp(60px,8vw,96px) 0;
+      background: var(--navy);
+    }
+    .modules-container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(20px,4vw,48px);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .section-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem,3.5vw,2.8rem);
+      font-weight: 700;
+      color: var(--white);
+    }
+    .section-header p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .module-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .module-card:hover { border-color: rgba(14,165,233,0.4); transform: translateY(-2px); }
+    .module-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .module-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .module-icon.sky   { background: rgba(14,165,233,0.15); color: #38bdf8; }
+    .module-icon.maple { background: rgba(220,38,38,0.12);  color: #f87171; }
+    .module-icon.green { background: rgba(16,185,129,0.12); color: #34d399; }
+    .module-icon.gold  { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .module-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .module-card p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .module-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .module-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .module-items li i { margin-top: 2px; flex-shrink: 0; }
+    .critical-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      background: rgba(239,68,68,0.2);
+      color: #f87171;
+      padding: 1px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    /* ── PROVINCES ─────────────────────────────────────────── */
+    .provinces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .province-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .province-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .province-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .province-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(220,38,38,0.15);
+      color: #f87171;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .province-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── 30 DAYS TIMELINE ──────────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 56px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+    }
+    .timeline-range {
+      width: 96px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-right: 24px;
+      position: relative;
+    }
+    .timeline-range span {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(16,185,129,0.15);
+      color: #34d399;
+      padding: 4px 8px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .timeline-dot {
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px; height: 10px;
+      background: #34d399;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+    }
+    .timeline-content {
+      flex: 1;
+    }
+    .timeline-content p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA SECTION ───────────────────────────────────────── */
+    .predepart-cta-section {
+      padding: clamp(60px,8vw,96px) 0;
+      background: var(--navy-light);
+    }
+    .predepart-cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 clamp(20px,4vw,48px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .predepart-cta-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem,3.5vw,2.8rem);
+      font-weight: 700;
+      color: var(--white);
+    }
+    .predepart-cta-inner h2 span { color: #38bdf8; }
+    .predepart-cta-inner p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 560px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-medallion">
+        <svg width="15" height="17" viewBox="0 0 40 44" fill="none">
+          <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#g1)"/>
+          <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
+          <defs>
+            <linearGradient id="g1" x1="10" y1="3" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">PARCOURS<span class="logo-accent">CA</span></span>
+    </a>
+    <div class="desktop-nav">
+      <a href="index.html#mission" class="nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+      <a href="index.html#features" class="nav-link" data-fr="L'application" data-en="The App">L'application</a>
+      <a href="index.html#tarifs" class="nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+      <a href="predepart.html" class="nav-link" style="color:#38bdf8;font-weight:700;" data-fr="✈ Pré-Départ" data-en="✈ Pre-Departure">✈ Pré-Départ</a>
+      <a href="affilies.html" class="nav-link" style="color:#C9A84C;font-weight:700;" data-fr="Affiliés 🤝" data-en="Affiliates 🤝">Affiliés 🤝</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="https://app.parcoursca.ca" class="btn-primary btn-sm" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#mission" class="mobile-nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+    <a href="index.html#features" class="mobile-nav-link" data-fr="L'application" data-en="The App">L'application</a>
+    <a href="index.html#tarifs" class="mobile-nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="predepart.html" class="mobile-nav-link" style="color:#38bdf8;font-weight:700;" data-fr="✈ Pré-Départ" data-en="✈ Pre-Departure">✈ Pré-Départ</a>
+    <a href="affilies.html" class="mobile-nav-link" style="color:#C9A84C;font-weight:700;" data-fr="Affiliés 🤝" data-en="Affiliates 🤝">Affiliés 🤝</a>
+    <a href="https://app.parcoursca.ca" class="btn-primary" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-predepart">
+  <div class="hero-predepart-inner">
+    <div class="predepart-badge">
+      <span class="predepart-badge-dot"></span>
+      <span data-fr="Service pré-départ · Disponible maintenant" data-en="Pre-departure service · Available now">Service pré-départ · Disponible maintenant</span>
+    </div>
+
+    <h1 data-fr="Vous partez bientôt au <span>Canada</span> ?" data-en="Leaving for <span>Canada</span> soon?">
+      Vous partez bientôt au <span>Canada</span> ?
+    </h1>
+
+    <p class="hero-predepart-sub"
+       data-fr="Préparez-vous 6 à 12 mois avant l'arrivée. Les immigrants bien préparés s'intègrent 3× plus vite, évitent les erreurs coûteuses et connaissent leurs droits dès le premier jour."
+       data-en="Prepare 6–12 months before arrival. Well-prepared immigrants integrate 3× faster, avoid costly mistakes and know their rights from day one.">
+      Préparez-vous 6 à 12 mois avant l'arrivée. Les immigrants bien préparés s'intègrent 3× plus vite, évitent les erreurs coûteuses et connaissent leurs droits dès le premier jour.
+    </p>
+
+    <div class="impact-bar">
+      <div class="impact-item">
+        <div class="impact-number">6–12</div>
+        <div class="impact-label" data-fr="mois de préparation" data-en="months of preparation">mois de préparation</div>
+      </div>
+      <div class="impact-sep"></div>
+      <div class="impact-item">
+        <div class="impact-number">3×</div>
+        <div class="impact-label" data-fr="intégration plus rapide" data-en="faster integration">intégration plus rapide</div>
+      </div>
+      <div class="impact-sep"></div>
+      <div class="impact-item">
+        <div class="impact-number">18+</div>
+        <div class="impact-label" data-fr="langues supportées" data-en="languages supported">langues supportées</div>
+      </div>
+      <div class="impact-sep"></div>
+      <div class="impact-item">
+        <div class="impact-number">13</div>
+        <div class="impact-label" data-fr="provinces couvertes" data-en="provinces covered">provinces couvertes</div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="https://app.parcoursca.ca" class="btn-primary btn-lg" data-fr="Télécharger l'app gratuite →" data-en="Download the free app →">Télécharger l'app gratuite →</a>
+      <a href="#modules" class="btn-secondary btn-lg" data-fr="Voir le guide" data-en="See the guide">Voir le guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY : BEFORE / AFTER -->
+<section class="story-section">
+  <div class="story-grid">
+    <div class="story-card without">
+      <div class="story-card-header">
+        <div class="story-icon red"><i data-lucide="x-circle" style="width:22px;height:22px;"></i></div>
+        <h3 data-fr="Sans ParcoursCA" data-en="Without ParcoursCA">Sans ParcoursCA</h3>
+      </div>
+      <ul class="story-steps">
+        <li><span class="dot red"></span><span data-fr="6–12 mois de recherches désorganisées sur Google" data-en="6–12 months of disorganized Google searches">6–12 mois de recherches désorganisées sur Google</span></li>
+        <li><span class="dot red"></span><span data-fr="Informations incomplètes, souvent périmées" data-en="Incomplete, often outdated information">Informations incomplètes, souvent périmées</span></li>
+        <li><span class="dot red"></span><span data-fr="Arrivée au Canada mal préparé" data-en="Arriving in Canada unprepared">Arrivée au Canada mal préparé</span></li>
+        <li><span class="dot red"></span><span data-fr="Découverte de ParcoursCA trop tard — après l'arrivée" data-en="Discovering ParcoursCA too late — after arrival">Découverte de ParcoursCA trop tard — après l'arrivée</span></li>
+        <li><span class="dot red"></span><span data-fr="Erreurs fiscales la première année" data-en="Tax mistakes in year one">Erreurs fiscales la première année</span></li>
+        <li><span class="dot red"></span><span data-fr="Ne sait pas quelle province choisir" data-en="Doesn't know which province to choose">Ne sait pas quelle province choisir</span></li>
+      </ul>
+    </div>
+    <div class="story-card with">
+      <div class="story-card-header">
+        <div class="story-icon green"><i data-lucide="check-circle-2" style="width:22px;height:22px;"></i></div>
+        <h3 data-fr="Avec ParcoursCA — depuis son pays" data-en="With ParcoursCA — from home country">Avec ParcoursCA — depuis son pays</h3>
+      </div>
+      <ul class="story-steps">
+        <li><span class="dot green"></span><span data-fr="Télécharge l'app dès l'obtention de la résidence permanente" data-en="Downloads the app as soon as permanent residence is granted">Télécharge l'app dès l'obtention de la résidence permanente</span></li>
+        <li><span class="dot green"></span><span data-fr="Se prépare 6–12 mois à l'avance, dans sa langue" data-en="Prepares 6–12 months in advance, in their language">Se prépare 6–12 mois à l'avance, dans sa langue</span></li>
+        <li><span class="dot green"></span><span data-fr="Sait déjà quelle province choisir selon son profil" data-en="Already knows which province to choose based on their profile">Sait déjà quelle province choisir selon son profil</span></li>
+        <li><span class="dot green"></span><span data-fr="Connaît les délais permis de conduire avant de partir" data-en="Knows driver's license delays before leaving">Connaît les délais permis de conduire avant de partir</span></li>
+        <li><span class="dot green"></span><span data-fr="Arrive au Canada BIEN PRÉPARÉ" data-en="Arrives in Canada WELL PREPARED">Arrive au Canada <strong>BIEN PRÉPARÉ</strong></span></li>
+        <li><span class="dot green"></span><span data-fr="Continue d'utiliser ParcoursCA après l'arrivée" data-en="Continues using ParcoursCA after arrival">Continue d'utiliser ParcoursCA après l'arrivée</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section" id="modules">
+  <div class="modules-container">
+    <div class="section-header">
+      <h2 data-fr="Votre guide complet en <span style='color:#38bdf8'>4 modules</span>" data-en="Your complete guide in <span style='color:#38bdf8'>4 modules</span>">
+        Votre guide complet en <span style="color:#38bdf8">4 modules</span>
+      </h2>
+      <p data-fr="Tout ce dont vous avez besoin, organisé étape par étape." data-en="Everything you need, organized step by step.">
+        Tout ce dont vous avez besoin, organisé étape par étape.
+      </p>
+    </div>
+
+    <!-- MODULE 1 — DOCUMENTS -->
+    <div class="module-card">
+      <div class="module-card-header">
+        <div class="module-icon sky"><i data-lucide="file-check" style="width:24px;height:24px;"></i></div>
+        <div>
+          <h3 data-fr="Documents à rassembler" data-en="Documents to gather">Documents à rassembler</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:2px;" data-fr="Avant de quitter votre pays" data-en="Before leaving your country">Avant de quitter votre pays</p>
+        </div>
+      </div>
+      <ul class="module-items">
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#f87171;"></i><span data-fr="Passeport valide (min. 2 ans de validité)" data-en="Valid passport (min. 2 years validity)">Passeport valide (min. 2 ans)<span class="critical-badge" data-fr="CRITIQUE" data-en="CRITICAL">CRITIQUE</span></span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#f87171;"></i><span data-fr="Visa / Résidence permanente / eTA / lettre IRCC" data-en="Visa / Permanent Residence / eTA / IRCC letter">Visa / RP / eTA / lettre IRCC<span class="critical-badge" data-fr="CRITIQUE" data-en="CRITICAL">CRITIQUE</span></span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#f87171;"></i><span data-fr="Preuve de fonds — relevés bancaires 3 mois" data-en="Proof of funds — 3 months bank statements">Preuve de fonds — relevés bancaires 3 mois<span class="critical-badge" data-fr="CRITIQUE" data-en="CRITICAL">CRITIQUE</span></span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#f87171;"></i><span data-fr="Assurance voyage/santé (couvre le délai de carence)" data-en="Travel/health insurance (covers waiting period)">Assurance voyage/santé (couvre délai de carence)<span class="critical-badge" data-fr="CRITIQUE" data-en="CRITICAL">CRITIQUE</span></span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="Actes d'état civil traduits + apostille" data-en="Civil records translated + apostille">Actes d'état civil traduits + apostille</span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="Diplômes + relevés de notes traduits (FR ou EN)" data-en="Diplomas + transcripts translated (FR or EN)">Diplômes + relevés de notes traduits (FR ou EN)</span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="CV en français ET en anglais (format canadien)" data-en="CV in French AND English (Canadian format)">CV en français ET en anglais (format canadien)</span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="Logement temporaire confirmé" data-en="Confirmed temporary housing">Logement temporaire confirmé (hôtel, Airbnb, famille)</span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="Photos format canadien (50×70mm, fond blanc)" data-en="Canadian format photos (50×70mm, white background)">Photos format canadien (50×70mm, fond blanc)</span></li>
+        <li><i data-lucide="circle-dot" style="width:14px;height:14px;color:#94a3b8;"></i><span data-fr="Contacts d'urgence : ambassade, famille, médecin" data-en="Emergency contacts: embassy, family, doctor">Contacts d'urgence : ambassade, famille, médecin</span></li>
+      </ul>
+    </div>
+
+    <!-- MODULE 2 — PROVINCES -->
+    <div class="module-card">
+      <div class="module-card-header">
+        <div class="module-icon maple"><i data-lucide="map-pin" style="width:24px;height:24px;"></i></div>
+        <div>
+          <h3 data-fr="Quelle province choisir ?" data-en="Which province to choose?">Quelle province choisir ?</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:2px;" data-fr="Selon votre langue, emploi et famille" data-en="Based on your language, job and family">Selon votre langue, emploi et famille</p>
+        </div>
+      </div>
+      <div class="provinces-grid">
+        <div class="province-card">
+          <div class="province-card-top">
+            <span class="province-name">Québec</span>
+            <span class="province-tag">FR</span>
+          </div>
+          <p class="province-desc" data-fr="Seule province francophone. Programme PEQ. Fiscalité distincte. Forte communauté immigrante." data-en="Only French province. PEQ program. Distinct tax system. Large immigrant community.">Seule province francophone. Programme PEQ. Fiscalité distincte. Forte communauté immigrante.</p>
+        </div>
+        <div class="province-card">
+          <div class="province-card-top">
+            <span class="province-name">Ontario</span>
+            <span class="province-tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;">#1</span>
+          </div>
+          <p class="province-desc" data-fr="Marché de l'emploi #1 au Canada. Toronto, ville la plus multiculturelle au monde. Anglophone." data-en="Canada's #1 job market. Toronto, world's most multicultural city. English-speaking.">Marché de l'emploi #1. Toronto, ville la plus multiculturelle au monde.</p>
+        </div>
+        <div class="province-card">
+          <div class="province-card-top">
+            <span class="province-name">Colombie-Britannique</span>
+            <span class="province-tag" style="background:rgba(16,185,129,0.15);color:#34d399;">Techno</span>
+          </div>
+          <p class="province-desc" data-fr="Climat doux, secteur technologique fort, Vancouver cosmopolite. Coût de vie élevé." data-en="Mild climate, strong tech sector, cosmopolitan Vancouver. High cost of living.">Climat doux, secteur techno fort. Vancouver cosmopolite.</p>
+        </div>
+        <div class="province-card">
+          <div class="province-card-top">
+            <span class="province-name">Alberta</span>
+            <span class="province-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">0 tax</span>
+          </div>
+          <p class="province-desc" data-fr="Aucune taxe provinciale sur le revenu. Secteur pétrolier et diversification économique." data-en="No provincial income tax. Oil sector and economic diversification.">Aucune taxe provinciale. Secteur pétrolier + diversification.</p>
+        </div>
+        <div class="province-card">
+          <div class="province-card-top">
+            <span class="province-name">Manitoba / Saskatchewan</span>
+            <span class="province-tag" style="background:rgba(168,85,247,0.15);color:#c084fc;">PNP</span>
+          </div>
+          <p class="province-desc" data-fr="Programme des Candidats des Provinces actif. Coût de vie bas. Bonne porte d'entrée." data-en="Active Provincial Nominee Program. Low cost of living. Great entry point.">Programme des Candidats des Provinces actif. Coût de vie bas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 3 — 30 DAYS -->
+    <div class="module-card">
+      <div class="module-card-header">
+        <div class="module-icon green"><i data-lucide="calendar-check" style="width:24px;height:24px;"></i></div>
+        <div>
+          <h3 data-fr="Les 30 premiers jours" data-en="The first 30 days">Les 30 premiers jours</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:2px;" data-fr="Chronologie des démarches essentielles" data-en="Timeline of essential steps">Chronologie des démarches essentielles</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-range"><span data-fr="Jour 1–3" data-en="Day 1–3">Jour 1–3</span><div class="timeline-dot"></div></div>
+          <div class="timeline-content"><p data-fr="Obtenir le NAS (Numéro d'Assurance Sociale) — Service Canada. Sans NAS, impossible de travailler légalement au Canada." data-en="Get your SIN (Social Insurance Number) — Service Canada. Without a SIN, you cannot work legally in Canada.">Obtenir le NAS (Numéro d'Assurance Sociale) — Service Canada. Sans NAS, impossible de travailler légalement.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-range"><span data-fr="Sem. 1" data-en="Wk 1">Sem. 1</span><div class="timeline-dot"></div></div>
+          <div class="timeline-content"><p data-fr="Ouvrir un compte bancaire canadien + obtenir une carte SIM locale. Indispensable pour toutes les démarches administratives." data-en="Open a Canadian bank account + get a local SIM card. Essential for all administrative steps.">Ouvrir un compte bancaire canadien + obtenir une carte SIM locale. Indispensable pour toutes les démarches.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-range"><span data-fr="Sem. 2" data-en="Wk 2">Sem. 2</span><div class="timeline-dot"></div></div>
+          <div class="timeline-content"><p data-fr="S'inscrire au régime de santé provincial : RAMQ (Québec), OHIP (Ontario). Délai de carence de 3 mois dans certaines provinces — souscrire une assurance privée temporaire." data-en="Register for provincial health insurance: RAMQ (Quebec), OHIP (Ontario). 3-month waiting period in some provinces — get temporary private insurance.">S'inscrire au régime de santé provincial (RAMQ au Québec, OHIP en Ontario). Délai de carence possible.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-range"><span data-fr="Sem. 2–4" data-en="Wk 2–4">Sem. 2–4</span><div class="timeline-dot"></div></div>
+          <div class="timeline-content"><p data-fr="Entamer les démarches pour le permis de conduire. Les délais varient selon votre province et votre pays d'origine. Certains pays ont des accords de réciprocité." data-en="Begin driver's license process. Delays vary by province and country of origin. Some countries have reciprocity agreements.">Entamer les démarches pour le permis de conduire. Délais variables par province et pays d'origine.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-range"><span data-fr="Mois 1" data-en="Month 1">Mois 1</span><div class="timeline-dot"></div></div>
+          <div class="timeline-content"><p data-fr="Mettre à jour votre adresse auprès d'IRCC. Signer un bail permanent. S'inscrire aux services sociaux si applicable (aide au logement, allocations)." data-en="Update your address with IRCC. Sign a permanent lease. Register for social services if applicable (housing assistance, benefits).">Mettre à jour l'adresse auprès d'IRCC, signer un bail permanent, s'inscrire aux services sociaux si applicable.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 4 — FISCAL -->
+    <div class="module-card">
+      <div class="module-card-header">
+        <div class="module-icon gold"><i data-lucide="receipt" style="width:24px;height:24px;"></i></div>
+        <div>
+          <h3 data-fr="Démarches fiscales — Année 1" data-en="Tax steps — Year 1">Démarches fiscales — Année 1</h3>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:2px;" data-fr="À connaître avant même d'arriver au Canada" data-en="Know this before you even arrive in Canada">À connaître avant même d'arriver au Canada</p>
+        </div>
+      </div>
+      <ul class="module-items">
+        <li><i data-lucide="dollar-sign" style="width:14px;height:14px;color:var(--gold);"></i><span data-fr="Déclaration obligatoire dès la 1ère année, même si arrivée en décembre. Date limite : 30 avril." data-en="Tax return required from year 1, even if you arrived in December. Deadline: April 30.">Déclaration obligatoire dès l'an 1, même si arrivée en décembre. Date limite : 30 avril.</span></li>
+        <li><i data-lucide="dollar-sign" style="width:14px;height:14px;color:var(--gold);"></i><span data-fr="Votre NAS est votre numéro fiscal — requis pour tout : emploi, banque, impôts." data-en="Your SIN is your tax number — required for everything: employment, banking, taxes.">Votre NAS est votre numéro fiscal — requis pour tout : emploi, banque, impôts.</span></li>
+        <li><i data-lucide="dollar-sign" style="width:14px;height:14px;color:var(--gold);"></i><span data-fr="Remboursement TPS/TVH disponible pour résidents à faible revenu. À demander dans la déclaration." data-en="GST/HST refund available for low-income residents. Apply in your tax return.">Remboursement TPS/TVH pour résidents à faible revenu. À demander dans la déclaration.</span></li>
+        <li><i data-lucide="dollar-sign" style="width:14px;height:14px;color:var(--gold);"></i><span data-fr="Allocation Canadienne pour Enfants (ACE) : s'inscrire dès l'arrivée si vous avez des enfants." data-en="Canada Child Benefit (CCB): register upon arrival if you have children.">Allocation Canadienne pour Enfants (ACE) — s'inscrire dès l'arrivée si vous avez des enfants.</span></li>
+        <li><i data-lucide="dollar-sign" style="width:14px;height:14px;color:var(--gold);"></i><span data-fr="Conservez toutes les factures de déménagement international — potentiellement déductibles." data-en="Keep all international moving receipts — potentially deductible.">Conservez toutes les factures de déménagement international — potentiellement déductibles.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="predepart-cta-section">
+  <div class="predepart-cta-inner">
+    <h2 data-fr="Commencez à vous préparer <span>depuis chez vous</span>" data-en="Start preparing <span>from home</span>">
+      Commencez à vous préparer <span>depuis chez vous</span>
+    </h2>
+    <p data-fr="ParcoursCA vous accompagne de votre pays d'origine jusqu'à votre pleine intégration au Canada. Téléchargez l'app gratuitement — dans votre langue, adapté à votre statut et votre province."
+       data-en="ParcoursCA accompanies you from your home country to full integration in Canada. Download the app for free — in your language, tailored to your status and province.">
+      ParcoursCA vous accompagne de votre pays d'origine jusqu'à votre pleine intégration au Canada. Téléchargez l'app gratuitement — dans votre langue, adapté à votre statut et votre province.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://app.parcoursca.ca" class="btn-primary btn-lg" data-fr="Télécharger gratuitement →" data-en="Download for free →">Télécharger gratuitement →</a>
+      <a href="index.html" class="btn-secondary btn-lg" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-medallion" style="width:28px;height:28px;">
+          <svg width="13" height="15" viewBox="0 0 40 44" fill="none">
+            <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#gf)"/>
+            <defs><linearGradient id="gf" x1="10" y1="3" x2="30" y2="44"><stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/></linearGradient></defs>
+          </svg>
+        </div>
+        <span class="logo-text" style="font-size:1rem;">PARCOURS<span class="logo-accent">CA</span></span>
+      </div>
+      <p class="footer-tagline" data-fr="Des Premières Nations aux Nouveaux Arrivants — ParcoursCA." data-en="From First Nations to Newcomers — ParcoursCA.">Des Premières Nations aux Nouveaux Arrivants — ParcoursCA.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="predepart.html" data-fr="Pré-Départ" data-en="Pre-Departure">Pré-Départ</a>
+      <a href="affilies.html" data-fr="Affiliés" data-en="Affiliates">Affiliés</a>
+      <a href="https://app.parcoursca.ca" data-fr="Application" data-en="Application">Application</a>
+    </div>
+    <div class="footer-copy">
+      <p data-fr="© 2026 ParcoursCA. Tous droits réservés." data-en="© 2026 ParcoursCA. All rights reserved.">© 2026 ParcoursCA. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lucide icons
+  lucide.createIcons();
+
+  // Language toggle
+  const langBtns = document.querySelectorAll('.lang-btn');
+  let currentLang = 'fr';
+  function applyLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      if (el.dataset[lang]) el.innerHTML = el.dataset[lang];
+    });
+    langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  }
+  langBtns.forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger?.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>
