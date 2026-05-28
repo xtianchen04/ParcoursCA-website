@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ParcoursCA — La référence de confiance pour tous les Canadiens. Peuples autochtones, citoyens canadiens et nouveaux arrivants. 25 agents IA, 15 langues, 13 provinces." />
+  <title>ParcoursCA — La référence de confiance pour tous les Canadiens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Sora:wght@300;400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — NAV
+═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="nav-logo">
+      <div class="logo-medallion">
+        <svg width="15" height="17" viewBox="0 0 40 44" fill="none">
+          <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#g1)"/>
+          <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
+          <defs>
+            <linearGradient id="g1" x1="10" y1="3" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">PARCOURS<span class="logo-accent">CA</span></span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="desktop-nav">
+      <a href="#mission" class="nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+      <a href="#features" class="nav-link" data-fr="L'application" data-en="The App">L'application</a>
+      <a href="#tarifs" class="nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+      <a href="#gouvernement" class="nav-link" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+      <a href="#partenaires" class="nav-link" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+      <a href="affilies.html" class="nav-link" style="color:#C9A84C;font-weight:700;" data-fr="Affiliés 🤝" data-en="Affiliates 🤝">Affiliés 🤝</a>
+    </div>
+
+    <!-- Right controls -->
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="https://app.parcoursca.ca" class="btn-primary btn-sm" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#mission" class="mobile-nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+    <a href="#features" class="mobile-nav-link" data-fr="L'application" data-en="The App">L'application</a>
+    <a href="#tarifs" class="mobile-nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="#gouvernement" class="mobile-nav-link" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+    <a href="#partenaires" class="mobile-nav-link" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+    <a href="affilies.html" class="mobile-nav-link" style="color:#C9A84C;font-weight:700;" data-fr="Affiliés 🤝" data-en="Affiliates 🤝">Affiliés 🤝</a>
+    <a href="https://app.parcoursca.ca" class="btn-primary" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-maple-bg"></div>
+  <div class="hero-container hero-split">
+
+    <!-- LEFT — Text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-fr="Fait au Canada · Lancé 2025" data-en="Made in Canada · Launched 2025">Fait au Canada · Lancé 2025</span>
+      </div>
+
+      <h1 class="hero-h1" data-fr="La référence de confiance pour tous les Canadiens" data-en="The trusted reference for all Canadians">
+        La référence de confiance pour tous les Canadiens
+      </h1>
+
+      <p class="hero-tagline" data-fr="Peuples autochtones, citoyens canadiens et nouveaux arrivants — ParcoursCA." data-en="Indigenous peoples, Canadian citizens and newcomers — ParcoursCA.">
+        <em>Peuples autochtones, citoyens canadiens et nouveaux arrivants — ParcoursCA.</em>
+      </p>
+
+      <p class="hero-desc" data-fr="Services gouvernementaux, impôts, documents, droits et parcours d'intégration — propulsé par 25 agents IA spécialisés, en 15 langues, pour toutes les provinces." data-en="Government services, taxes, documents, rights and settlement — powered by 25 specialized AI agents, in 15 languages, across all provinces.">
+        Services gouvernementaux, impôts, documents, droits et parcours d'intégration — propulsé par 25 agents IA spécialisés, en 15 langues, pour toutes les provinces.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://app.parcoursca.ca" class="btn-primary btn-lg" data-fr="Ouvrir l'application →" data-en="Open the app →">Ouvrir l'application →</a>
+        <a href="#gouvernement" class="btn-secondary btn-lg" data-fr="Pour le gouvernement" data-en="For government">Pour le gouvernement</a>
+      </div>
+
+      <div class="hero-trust">
+        <span class="trust-badge"><i data-lucide="lock"></i><span>AES-256</span></span>
+        <span class="trust-badge"><i data-lucide="shield"></i><span>LPRPDE</span></span>
+        <span class="trust-badge"><i data-lucide="globe"></i><span data-fr="15 langues" data-en="15 languages">15 langues</span></span>
+        <span class="trust-badge"><i data-lucide="smartphone"></i><span data-fr="Données locales" data-en="Local data">Données locales</span></span>
+      </div>
+    </div>
+
+    <!-- RIGHT — Phone mockup -->
+    <div class="hero-right">
+      <div class="phone-mockup-wrap">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ph-status">
+              <span>9:41</span><span>●●● WiFi</span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-logo">Parcours<span>CA</span></span>
+              <div class="ph-nav-icons">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+              </div>
+            </div>
+            <div class="ph-hero-card">
+              <div class="ph-hero-tag" data-fr="Ontario (ON) · 3 profils disponibles" data-en="Ontario (ON) · 3 profiles available">Ontario (ON) · 3 profils disponibles</div>
+              <div class="ph-hero-name" data-fr="Bonjour, Marie 👋" data-en="Hello, Marie 👋">Bonjour, Marie 👋</div>
+              <div class="ph-hero-sub" data-fr="25 agents IA · 15 langues · 13 provinces" data-en="25 AI agents · 15 languages · 13 provinces">25 agents IA · 15 langues · 13 provinces</div>
+            </div>
+            <div class="ph-grid">
+              <div class="ph-card">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div class="ph-card-title" data-fr="Mes Documents" data-en="My Documents">Mes Documents</div>
+                <div class="ph-card-sub" data-fr="Passeports, permis" data-en="Passports, permits">Passeports, permis</div>
+              </div>
+              <div class="ph-card">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <div class="ph-card-title" data-fr="Impôts &amp; Fiscal" data-en="Tax &amp; Finance">Impôts &amp; Fiscal</div>
+                <div class="ph-card-sub">T1, REER, CELI</div>
+              </div>
+              <div class="ph-card">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <div class="ph-card-title" data-fr="Services" data-en="Services">Services</div>
+                <div class="ph-card-sub" data-fr="Santé, logement" data-en="Health, housing">Santé, logement</div>
+              </div>
+              <div class="ph-card">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                <div class="ph-card-title" data-fr="Boussole" data-en="Compass">Boussole</div>
+                <div class="ph-card-sub" data-fr="Citoyenneté" data-en="Citizenship">Citoyenneté</div>
+              </div>
+            </div>
+            <div class="ph-partner">
+              <div class="ph-partner-left">
+                <div class="ph-partner-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <div>
+                  <div class="ph-partner-badge" data-fr="★ Platine · Partenaire Officiel" data-en="★ Platinum · Official Partner">★ Platine · Partenaire Officiel</div>
+                  <div class="ph-partner-name">Manheim Tax &amp; Accounting</div>
+                </div>
+              </div>
+              <div class="ph-partner-btn" data-fr="Offre →" data-en="Offer →">Offre →</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-glow"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — STATS
+═══════════════════════════════════════════════════════════ -->
+<section class="stats-section" id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-target="2200000" data-suffix="+">0</div>
+        <div class="stat-label" data-fr="Résidents ciblés par ParcoursCA" data-en="Residents targeted by ParcoursCA">Résidents ciblés par ParcoursCA</div>
+        <div class="stat-source" data-fr="IRCC · SAC · StatCan" data-en="IRCC · ISC · StatCan">IRCC · SAC · StatCan</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="13" data-suffix="">0</div>
+        <div class="stat-label" data-fr="Provinces et territoires couverts" data-en="Provinces and territories covered">Provinces et territoires couverts</div>
+        <div class="stat-source" data-fr="Partout au Canada" data-en="Across Canada">Partout au Canada</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label" data-fr="Services répertoriés" data-en="Listed services">Services répertoriés</div>
+        <div class="stat-source" data-fr="Fédéraux et provinciaux" data-en="Federal and provincial">Fédéraux et provinciaux</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="15" data-suffix="">0</div>
+        <div class="stat-label" data-fr="Langues disponibles" data-en="Available languages">Langues disponibles</div>
+        <div class="stat-source" data-fr="FR · EN · ES · HT · ZH · HI · UK · RU + 4 autochtones" data-en="FR · EN · ES · HT · ZH · HI · UK · RU + 4 Indigenous">FR · EN · ES · HT · ZH · HI · UK · RU + 4 autochtones</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="25" data-suffix="">0</div>
+        <div class="stat-label" data-fr="Agents IA spécialisés" data-en="Specialized AI agents">Agents IA spécialisés</div>
+        <div class="stat-source" data-fr="11 cœur · 14 veille gouvernementale" data-en="11 core · 14 government watch">11 cœur · 14 veille gouvernementale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 — MISSION
+═══════════════════════════════════════════════════════════ -->
+<section class="mission-section" id="mission">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Notre Mission" data-en="Our Mission">Notre Mission</span>
+    </div>
+    <h2 class="section-h2" data-fr="Rendre le Canada accessible à tous" data-en="Making Canada accessible to all">
+      Rendre le Canada accessible à tous
+    </h2>
+    <p class="section-desc" data-fr="ParcoursCA est la référence de confiance des peuples autochtones, des citoyens canadiens et des nouveaux arrivants — une plateforme institutionnelle, multilingue et sécurisée, propulsée par 25 agents IA." data-en="ParcoursCA is the trusted reference for Indigenous peoples, Canadian citizens and newcomers — an institutional, multilingual and secure platform, powered by 25 AI agents.">
+      ParcoursCA est la référence de confiance des peuples autochtones, des citoyens canadiens et des nouveaux arrivants — une plateforme institutionnelle, multilingue et sécurisée, propulsée par 25 agents IA.
+    </p>
+
+    <div class="mission-grid">
+      <div class="card mission-card">
+        <div class="card-icon">
+          <i data-lucide="lock"></i>
+        </div>
+        <h3 data-fr="Vie privée d'abord" data-en="Privacy first">Vie privée d'abord</h3>
+        <p data-fr="Vos données restent sur votre appareil. Chiffrement AES-256-GCM. Zéro revente. Conforme LPRPDE." data-en="Your data stays on your device. AES-256-GCM encryption. Zero resale. PIPEDA compliant.">Vos données restent sur votre appareil. Chiffrement AES-256-GCM. Zéro revente. Conforme LPRPDE.</p>
+      </div>
+      <div class="card mission-card">
+        <div class="card-icon">
+          <i data-lucide="globe"></i>
+        </div>
+        <h3 data-fr="Multilingue natif" data-en="Natively multilingual">Multilingue natif</h3>
+        <p data-fr="15 langues dont 4 langues autochtones (cri, ojibwé, inuktitut, mohawk). Chaque fonctionnalité, chaque réponse de l'IA, dans la langue de l'utilisateur." data-en="15 languages including 4 Indigenous languages (Cree, Ojibwe, Inuktitut, Mohawk). Every feature, every AI response, in the user's language.">15 langues dont 4 langues autochtones (cri, ojibwé, inuktitut, mohawk). Chaque fonctionnalité, chaque réponse de l'IA, dans la langue de l'utilisateur.</p>
+      </div>
+      <div class="card mission-card">
+        <div class="card-icon">
+          <i data-lucide="check-circle"></i>
+        </div>
+        <h3 data-fr="Gratuit pour tous" data-en="Free for everyone">Gratuit pour tous</h3>
+        <p data-fr="Le plan de base est et restera gratuit. L'accès à l'information essentielle ne devrait jamais avoir de prix." data-en="The basic plan is and will remain free. Access to essential information should never come at a cost.">Le plan de base est et restera gratuit. L'accès à l'information essentielle ne devrait jamais avoir de prix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — 4 PILIERS
+═══════════════════════════════════════════════════════════ -->
+<section class="pillars-section" id="features">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="L'Application" data-en="The Application">L'Application</span>
+    </div>
+    <h2 class="section-h2" data-fr="Quatre piliers pour votre parcours" data-en="Four pillars for your journey">
+      Quatre piliers pour votre parcours
+    </h2>
+
+    <div class="pillars-grid">
+      <div class="card pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="dollar-sign"></i>
+        </div>
+        <h3 data-fr="Impôts &amp; Fiscal" data-en="Tax &amp; Finance">Impôts &amp; Fiscal</h3>
+        <p data-fr="Crédits d'impôt, déclarations T1 et TP-1, remboursements, REER, CELI — tout ce que vous devez savoir, adapté à votre province et statut." data-en="Tax credits, T1 and TP-1 returns, refunds, RRSP, TFSA — everything you need to know, adapted to your province and status.">Crédits d'impôt, déclarations T1 et TP-1, remboursements, REER, CELI — tout ce que vous devez savoir, adapté à votre province et statut.</p>
+        <div class="pillar-tags">
+          <span class="tag">T1 · TP-1</span>
+          <span class="tag">ARC · Revenu QC</span>
+          <span class="tag" data-fr="Crédits" data-en="Credits">Crédits</span>
+        </div>
+      </div>
+
+      <div class="card pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="landmark"></i>
+        </div>
+        <h3 data-fr="Services &amp; Aide" data-en="Services &amp; Support">Services &amp; Aide</h3>
+        <p data-fr="500+ services fédéraux et provinciaux répertoriés : santé, logement, emploi, formation, aide sociale — filtrés par province." data-en="500+ federal and provincial services listed: health, housing, employment, training, social assistance — filtered by province.">500+ services fédéraux et provinciaux répertoriés : santé, logement, emploi, formation, aide sociale — filtrés par province.</p>
+        <div class="pillar-tags">
+          <span class="tag" data-fr="Santé" data-en="Health">Santé</span>
+          <span class="tag" data-fr="Logement" data-en="Housing">Logement</span>
+          <span class="tag" data-fr="Emploi" data-en="Employment">Emploi</span>
+        </div>
+      </div>
+
+      <div class="card pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="compass"></i>
+        </div>
+        <h3 data-fr="Boussole Immigration" data-en="Immigration Compass">Boussole Immigration</h3>
+        <p data-fr="Permis de travail, résidence permanente, citoyenneté — délais IRCC, renouvellements, suivi de vos jours physiques au Canada." data-en="Work permits, permanent residency, citizenship — IRCC timelines, renewals, tracking your physical days in Canada.">Permis de travail, résidence permanente, citoyenneté — délais IRCC, renouvellements, suivi de vos jours physiques au Canada.</p>
+        <div class="pillar-tags">
+          <span class="tag">IRCC</span>
+          <span class="tag">RP · Citoyenneté</span>
+          <span class="tag" data-fr="Délais" data-en="Timelines">Délais</span>
+        </div>
+      </div>
+
+      <div class="card pillar-card">
+        <div class="pillar-icon">
+          <i data-lucide="file-text"></i>
+        </div>
+        <h3 data-fr="Mes Documents" data-en="My Documents">Mes Documents</h3>
+        <p data-fr="Stockez, suivez et recevez des alertes d'expiration pour tous vos documents d'immigration. Passeport, permis, NAS, carte santé et plus." data-en="Store, track and receive expiry alerts for all your immigration documents. Passport, permits, SIN, health card and more.">Stockez, suivez et recevez des alertes d'expiration pour tous vos documents d'immigration. Passeport, permis, NAS, carte santé et plus.</p>
+        <div class="pillar-tags">
+          <span class="tag" data-fr="Alertes" data-en="Alerts">Alertes</span>
+          <span class="tag" data-fr="Sécurisé" data-en="Secure">Sécurisé</span>
+          <span class="tag" data-fr="Local" data-en="Local">Local</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 6 — SÉCURITÉ
+═══════════════════════════════════════════════════════════ -->
+<section class="security-section" id="securite">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Sécurité &amp; Conformité" data-en="Security &amp; Compliance">Sécurité &amp; Conformité</span>
+    </div>
+    <h2 class="section-h2" data-fr="Votre confiance est notre priorité absolue" data-en="Your trust is our absolute priority">
+      Votre confiance est notre priorité absolue
+    </h2>
+    <div class="security-badges">
+      <div class="security-badge">
+        <i data-lucide="shield"></i>
+        <span>AES-256-GCM</span>
+      </div>
+      <div class="security-badge">
+        <i data-lucide="scale"></i>
+        <span>LPRPDE / PIPEDA</span>
+      </div>
+      <div class="security-badge">
+        <i data-lucide="smartphone"></i>
+        <span data-fr="Données sur l'appareil" data-en="Data on device">Données sur l'appareil</span>
+      </div>
+      <div class="security-badge">
+        <i data-lucide="alert-triangle"></i>
+        <span data-fr="Zéro revente" data-en="Zero resale">Zéro revente</span>
+      </div>
+      <div class="security-badge">
+        <i data-lucide="check-circle"></i>
+        <span data-fr="Gratuit pour tous" data-en="Free for all">Gratuit pour tous</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 7 — TARIFS
+═══════════════════════════════════════════════════════════ -->
+<section class="pricing-section" id="tarifs">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Tarifs" data-en="Pricing">Tarifs</span>
+    </div>
+    <h2 class="section-h2" data-fr="Choisissez votre parcours" data-en="Choose your journey">
+      Choisissez votre parcours
+    </h2>
+
+    <div class="pricing-toggle">
+      <button class="pricing-btn active" data-billing="monthly" data-fr="Mensuel" data-en="Monthly">Mensuel</button>
+      <button class="pricing-btn" data-billing="yearly" data-fr="Annuel" data-en="Annual">Annuel</button>
+      <span class="pricing-badge" data-fr="2 mois offerts" data-en="2 months free">2 mois offerts</span>
+    </div>
+
+    <div class="pricing-grid pricing-grid-2">
+      <!-- Essentielle — Gratuit -->
+      <div class="card pricing-card">
+        <div class="pricing-icon"><i data-lucide="leaf"></i></div>
+        <div class="pricing-name" data-fr="Essentielle" data-en="Essential">Essentielle</div>
+        <div class="pricing-price">
+          <span class="price-amount" style="color: var(--gold)" data-fr="Gratuit" data-en="Free">Gratuit</span>
+        </div>
+        <div class="pricing-trial" data-fr="Toujours gratuit — aucune carte requise" data-en="Always free — no card required">Toujours gratuit — aucune carte requise</div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i><span data-fr="Tableau de bord complet" data-en="Full dashboard">Tableau de bord complet</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Gestion de documents (base)" data-en="Basic document management">Gestion de documents (base)</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Parcours d'intégration guidé" data-en="Guided integration pathway">Parcours d'intégration guidé</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="1 province couverte" data-en="1 province covered">1 province couverte</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Fiscal de base" data-en="Basic tax module">Fiscal de base</span></li>
+        </ul>
+        <a href="https://app.parcoursca.ca" class="btn-secondary btn-full" data-fr="Commencer gratuitement" data-en="Get started free">Commencer gratuitement</a>
+      </div>
+
+      <!-- Prestige — 9,99$ CAD -->
+      <div class="card pricing-card pricing-popular">
+        <div class="pricing-popular-badge" data-fr="LE PLUS POPULAIRE" data-en="MOST POPULAR">LE PLUS POPULAIRE</div>
+        <div class="pricing-icon"><i data-lucide="crown"></i></div>
+        <div class="pricing-name" data-fr="Prestige" data-en="Prestige">Prestige</div>
+        <div class="pricing-price">
+          <span class="price-amount monthly-price">9,99</span>
+          <span class="price-amount yearly-price" style="display:none">99,99</span>
+          <span class="price-currency">CAD$</span>
+          <span class="price-period monthly-label" data-fr="/mois" data-en="/mo">/mois</span>
+          <span class="price-period yearly-label" data-fr="/an" data-en="/yr" style="display:none">/an</span>
+        </div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check-circle"></i><span data-fr="Alertes intelligentes automatiques" data-en="Automatic smart alerts">Alertes intelligentes automatiques</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Toutes les provinces couvertes" data-en="All provinces covered">Toutes les provinces couvertes</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Module fiscal complet + rappels" data-en="Full tax module + reminders">Module fiscal complet + rappels</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Consultation comptable intégrée" data-en="Integrated accounting consultation">Consultation comptable intégrée</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Export PDF dossier complet" data-en="Full file PDF export">Export PDF dossier complet</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Support prioritaire" data-en="Priority support">Support prioritaire</span></li>
+        </ul>
+        <a href="https://app.parcoursca.ca" class="btn-primary btn-full" data-fr="Choisir Prestige" data-en="Choose Prestige">Choisir Prestige</a>
+      </div>
+    </div>
+
+    <!-- ROI note -->
+    <div class="pricing-roi">
+      <i data-lucide="bar-chart-2"></i>
+      <p data-fr="En moyenne, nos utilisateurs récupèrent 1 800 $ en crédits d'impôt non réclamés lors de leur première année. Le plan de base est et restera toujours gratuit." data-en="On average, our users recover $1,800 in unclaimed tax credits in their first year. The basic plan is and will always remain free.">En moyenne, nos utilisateurs récupèrent 1 800 $ en crédits d'impôt non réclamés lors de leur première année. Le plan de base est et restera toujours gratuit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 9 — GOUVERNEMENT
+═══════════════════════════════════════════════════════════ -->
+<section class="govt-section" id="gouvernement">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Partenariat Gouvernemental" data-en="Government Partnership">Partenariat Gouvernemental</span>
+    </div>
+    <h2 class="section-h2" data-fr="Un partenaire de confiance pour les institutions" data-en="A trusted partner for institutions">
+      Un partenaire de confiance pour les institutions
+    </h2>
+
+    <div class="govt-grid">
+      <div class="govt-points">
+        <div class="govt-point">
+          <i data-lucide="check-circle"></i>
+          <div>
+            <h4 data-fr="Conformité fiscale" data-en="Tax compliance">Conformité fiscale</h4>
+            <p data-fr="Nous guidons tous les Canadiens — peuples autochtones, citoyens et nouveaux arrivants — vers la conformité fiscale fédérale et provinciale." data-en="We guide all Canadians — Indigenous peoples, citizens and newcomers — toward federal and provincial tax compliance.">Nous guidons tous les Canadiens — peuples autochtones, citoyens et nouveaux arrivants — vers la conformité fiscale fédérale et provinciale.</p>
+          </div>
+        </div>
+        <div class="govt-point">
+          <i data-lucide="globe"></i>
+          <div>
+            <h4 data-fr="Accès aux services" data-en="Access to services">Accès aux services</h4>
+            <p data-fr="ParcoursCA facilite l'accès aux programmes gouvernementaux existants, réduisant la charge administrative pour les organismes." data-en="ParcoursCA facilitates access to existing government programs, reducing administrative burden for agencies.">ParcoursCA facilite l'accès aux programmes gouvernementaux existants, réduisant la charge administrative pour les organismes.</p>
+          </div>
+        </div>
+        <div class="govt-point">
+          <i data-lucide="landmark"></i>
+          <div>
+            <h4 data-fr="Francophonie &amp; inclusion" data-en="Francophonie &amp; inclusion">Francophonie &amp; inclusion</h4>
+            <p data-fr="Notre plateforme promeut activement l'usage du français et soutient les objectifs de francisation du gouvernement fédéral et du Québec." data-en="Our platform actively promotes French usage and supports the francization objectives of the federal government and Quebec.">Notre plateforme promeut activement l'usage du français et soutient les objectifs de francisation du gouvernement fédéral et du Québec.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="govt-checklist card">
+        <h4 data-fr="Priorités fédérales alignées" data-en="Aligned federal priorities">Priorités fédérales alignées</h4>
+        <ul>
+          <li><i data-lucide="check-circle"></i><span data-fr="Plan des niveaux d'immigration 2025-2027" data-en="2025-2027 Immigration Levels Plan">Plan des niveaux d'immigration 2025-2027</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Stratégie d'inclusion économique des immigrants" data-en="Immigrant Economic Inclusion Strategy">Stratégie d'inclusion économique des immigrants</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Appel à l'action #92 — Réconciliation et technologie" data-en="Call to Action #92 — Reconciliation and technology">Appel à l'action #92 — Réconciliation et technologie</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Plan d'action pour les langues officielles" data-en="Official Languages Action Plan">Plan d'action pour les langues officielles</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Conformité LPRPDE / Loi 25 Québec" data-en="PIPEDA / Quebec Law 25 compliance">Conformité LPRPDE / Loi 25 Québec</span></li>
+          <li><i data-lucide="check-circle"></i><span data-fr="Accessibilité numérique WCAG 2.1" data-en="WCAG 2.1 digital accessibility">Accessibilité numérique WCAG 2.1</span></li>
+        </ul>
+        <div class="govt-cta">
+          <a href="mailto:gouvernement@parcoursca.ca" class="btn-primary" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
+          <a href="#" class="btn-secondary" data-fr="Télécharger notre dossier" data-en="Download our file">Télécharger notre dossier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 10 — PARTENAIRES
+═══════════════════════════════════════════════════════════ -->
+<section class="partners-section" id="partenaires">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Partenaires" data-en="Partners">Partenaires</span>
+    </div>
+    <h2 class="section-h2" data-fr="Un écosystème de partenaires de confiance" data-en="An ecosystem of trusted partners">
+      Un écosystème de partenaires de confiance
+    </h2>
+
+    <div class="partner-tiers">
+      <!-- Platine -->
+      <div class="partner-tier">
+        <div class="partner-tier-label platine" data-fr="Platine" data-en="Platinum">Platine</div>
+        <div class="partners-grid partners-platine">
+          <!-- Manheim Tax -->
+          <div class="partner-logo-card">
+            <div class="partner-logo-icon platine-icon">
+              <i data-lucide="calculator"></i>
+            </div>
+            <div class="partner-logo-info">
+              <div class="partner-logo-name">Manheim Tax &amp; Accounting Services</div>
+              <div class="partner-logo-desc" data-fr="Fiscalité · Comptabilité · Déclarations T1" data-en="Taxation · Accounting · T1 Returns">Fiscalité · Comptabilité · Déclarations T1</div>
+            </div>
+            <div class="partner-logo-badge platine-badge" data-fr="Platine" data-en="Platinum">Platine</div>
+          </div>
+          <!-- Fjord Tech Finance -->
+          <div class="partner-logo-card">
+            <div class="partner-logo-icon platine-icon">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <div class="partner-logo-info">
+              <div class="partner-logo-name">Fjord Tech Finance</div>
+              <div class="partner-logo-desc" data-fr="Technologie financière · Services aux immigrants" data-en="Financial technology · Immigrant services">Technologie financière · Services aux immigrants</div>
+            </div>
+            <div class="partner-logo-badge platine-badge" data-fr="Platine" data-en="Platinum">Platine</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Or — à venir -->
+      <div class="partner-tier">
+        <div class="partner-tier-label or" data-fr="Or — Bientôt disponible" data-en="Gold — Coming soon">Or — Bientôt disponible</div>
+        <div class="partners-grid partners-or">
+          <div class="partner-logo-placeholder coming-soon"><i data-lucide="plus-circle"></i><span data-fr="Votre entreprise ici" data-en="Your company here">Votre entreprise ici</span></div>
+          <div class="partner-logo-placeholder coming-soon"><i data-lucide="plus-circle"></i><span data-fr="Votre entreprise ici" data-en="Your company here">Votre entreprise ici</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="partners-cta">
+      <p data-fr="Vous souhaitez rejoindre notre réseau de partenaires ?" data-en="Want to join our partner network?">Vous souhaitez rejoindre notre réseau de partenaires ?</p>
+      <a href="mailto:partenaires@parcoursca.ca" class="btn-primary" data-fr="Devenir partenaire →" data-en="Become a partner →">Devenir partenaire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 11 — TÉMOIGNAGES
+═══════════════════════════════════════════════════════════ -->
+<section class="testimonials-section" id="temoignages">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Ce qu'on dit de nous" data-en="What people say">Ce qu'on dit de nous</span>
+    </div>
+    <h2 class="section-h2" data-fr="Ils ont fait leur parcours avec nous" data-en="They made their journey with us">
+      Ils ont fait leur parcours avec nous
+    </h2>
+
+    <div class="testimonials-grid">
+      <div class="card testimonial-card">
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="testimonial-text" data-fr="ParcoursCA m'a aidé à récupérer 2 400 $ de crédits d'impôt que je ne savais même pas exister. L'application est intuitive et les conseils sont clairs." data-en="ParcoursCA helped me recover $2,400 in tax credits I didn't even know existed. The app is intuitive and the advice is clear.">"ParcoursCA m'a aidé à récupérer 2 400 $ de crédits d'impôt que je ne savais même pas exister. L'application est intuitive et les conseils sont clairs."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amara K.</div>
+            <div class="testimonial-meta" data-fr="Montréal, QC · Résidente permanente" data-en="Montreal, QC · Permanent Resident">Montréal, QC · Résidente permanente</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card testimonial-card">
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="testimonial-text" data-fr="Enfin une application qui parle ukrainien et explique comment fonctionne le système canadien. Mon permis de travail a été renouvelé sans stress grâce aux alertes." data-en="Finally an app that speaks Ukrainian and explains how the Canadian system works. My work permit was renewed stress-free thanks to the alerts.">"Enfin une application qui parle ukrainien et explique comment fonctionne le système canadien. Mon permis de travail a été renouvelé sans stress grâce aux alertes."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">O</div>
+          <div>
+            <div class="testimonial-name">Olena V.</div>
+            <div class="testimonial-meta" data-fr="Toronto, ON · Permis de travail" data-en="Toronto, ON · Work Permit">Toronto, ON · Permis de travail</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card testimonial-card">
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <p class="testimonial-text" data-fr="En tant que travailleur autonome au Québec, je ne comprenais rien aux acomptes provisionnels. ParcoursCA m'a tout expliqué en espagnol, avec les formulaires TP." data-en="As a self-employed worker in Quebec, I didn't understand anything about tax installments. ParcoursCA explained everything in Spanish, with the TP forms.">"En tant que travailleur autonome au Québec, je ne comprenais rien aux acomptes provisionnels. ParcoursCA m'a tout expliqué en espagnol, avec les formulaires TP."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">C</div>
+          <div>
+            <div class="testimonial-name">Carlos M.</div>
+            <div class="testimonial-meta" data-fr="Québec, QC · Travailleur autonome" data-en="Quebec City, QC · Self-employed">Québec, QC · Travailleur autonome</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 12 — CTA FINAL
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="commencer">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label" style="justify-content:center;">
+        <span data-fr="Commencez maintenant" data-en="Start now">Commencez maintenant</span>
+      </div>
+      <h2 class="cta-h2" data-fr="Votre parcours canadien commence ici" data-en="Your Canadian journey starts here">
+        Votre parcours canadien commence ici
+      </h2>
+      <p data-fr="Rejoignez des milliers de peuples autochtones, citoyens canadiens et nouveaux arrivants qui font confiance à ParcoursCA pour naviguer le système canadien." data-en="Join thousands of Indigenous peoples, Canadian citizens and newcomers who trust ParcoursCA to navigate the Canadian system.">
+        Rejoignez des milliers de peuples autochtones, citoyens canadiens et nouveaux arrivants qui font confiance à ParcoursCA pour naviguer le système canadien.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://app.parcoursca.ca" class="btn-primary btn-lg" data-fr="Ouvrir l'application" data-en="Open the app">Ouvrir l'application</a>
+        <a href="#partenaires" class="btn-secondary btn-lg" data-fr="Devenir partenaire" data-en="Become a partner">Devenir partenaire</a>
+        <a href="#gouvernement" class="btn-secondary btn-lg" data-fr="Section gouvernement" data-en="Government section">Section gouvernement</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 13 — FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px;">
+          <div class="logo-medallion">
+            <svg width="15" height="17" viewBox="0 0 40 44" fill="none">
+              <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#g2)"/>
+              <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
+              <defs>
+                <linearGradient id="g2" x1="10" y1="3" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">PARCOURS<span class="logo-accent">CA</span></span>
+        </div>
+        <p data-fr="La référence de confiance pour peuples autochtones, citoyens canadiens et nouveaux arrivants." data-en="The trusted reference for Indigenous peoples, Canadian citizens and newcomers.">La référence de confiance pour peuples autochtones, citoyens canadiens et nouveaux arrivants.</p>
+        <p class="footer-tagline" data-fr="Institutionnelle · Multilingue · Sécurisée — ParcoursCA." data-en="Institutional · Multilingual · Secure — ParcoursCA."><em>Institutionnelle · Multilingue · Sécurisée — ParcoursCA.</em></p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h5 data-fr="Application" data-en="Application">Application</h5>
+          <a href="https://app.parcoursca.ca" data-fr="Ouvrir l'app" data-en="Open app">Ouvrir l'app</a>
+          <a href="#features" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+          <a href="#tarifs" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-fr="Entreprise" data-en="Company">Entreprise</h5>
+          <a href="#mission" data-fr="Notre mission" data-en="Our mission">Notre mission</a>
+          <a href="#partenaires" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+          <a href="#gouvernement" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+          <a href="mailto:info@parcoursca.ca" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-fr="Légal" data-en="Legal">Légal</h5>
+          <a href="#" data-fr="Politique de confidentialité" data-en="Privacy Policy">Politique de confidentialité</a>
+          <a href="#" data-fr="Conditions d'utilisation" data-en="Terms of Service">Conditions d'utilisation</a>
+          <a href="#" data-fr="Conformité LPRPDE" data-en="PIPEDA Compliance">Conformité LPRPDE</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-fr="© 2026 ParcoursCA. Tous droits réservés. Fait au Canada." data-en="© 2026 ParcoursCA. All rights reserved. Made in Canada.">© 2026 ParcoursCA. Tous droits réservés. Fait au Canada.</p>
+      <div class="footer-trust">
+        <span class="trust-badge"><i data-lucide="shield"></i> AES-256</span>
+        <span class="trust-badge"><i data-lucide="scale"></i> LPRPDE</span>
+        <span class="trust-badge"><i data-lucide="smartphone"></i> <span data-fr="Données locales" data-en="Local data">Données locales</span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

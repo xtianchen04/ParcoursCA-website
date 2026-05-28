@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Aperçu — App Mockup + Couleurs Gold</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0B1628;--navy-mid:#142035;--navy-light:#1E3050;--navy-card:#162540;
+  --gold:#C9A84C;--gold-light:#E2C47A;--gold-dark:#9D7928;
+  --gold-pale:rgba(201,168,76,.10);--gold-border:rgba(201,168,76,.18);
+  --white:#fff;--muted:rgba(255,255,255,.48);--off-white:#F7F4EF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--navy);color:var(--white);font-family:'Sora',sans-serif;min-height:100vh}
+
+/* ── SECTION LAYOUT ── */
+.section{
+  display:flex;flex-direction:column;align-items:center;
+  padding:80px 24px;gap:64px;max-width:1100px;margin:0 auto;
+}
+.label{
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-pale);border:1px solid var(--gold-border);
+  border-radius:50px;padding:5px 14px;width:fit-content;
+}
+h2{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;line-height:1.12;letter-spacing:-.02em;text-align:center;
+}
+.sub{font-size:1rem;color:var(--muted);text-align:center;max-width:560px;line-height:1.7;}
+.header{display:flex;flex-direction:column;align-items:center;gap:16px;}
+
+/* ── TWO COLUMN ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;width:100%;}
+
+/* ── PHONE MOCKUP ── */
+.phone{
+  width:260px;margin:0 auto;
+  background:#0d1b30;
+  border-radius:38px;
+  border:2px solid rgba(201,168,76,.25);
+  box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.04);
+  overflow:hidden;
+  position:relative;
+}
+/* Notch */
+.phone::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:90px;height:26px;background:#0d1b30;border-radius:0 0 16px 16px;z-index:10;
+}
+.phone-inner{padding:36px 16px 20px;}
+
+/* Status bar */
+.status-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px;}
+.status-time{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.6);}
+.status-icons{display:flex;gap:4px;}
+.status-icons span{font-size:.55rem;color:rgba(255,255,255,.5);}
+
+/* App nav */
+.app-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.app-logo{font-size:.85rem;font-weight:800;letter-spacing:.04em;}
+.app-logo span{color:var(--gold);}
+.app-icons{display:flex;gap:8px;}
+.app-icons svg{width:16px;height:16px;fill:var(--gold);opacity:.9;}
+
+/* Hero card */
+.hero-card{
+  background:linear-gradient(135deg,var(--navy-light),#1a2d4a);
+  border:1px solid var(--gold-border);border-radius:16px;
+  padding:16px;margin-bottom:14px;
+}
+.hero-tag{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;line-height:1.2;margin-bottom:4px;}
+.hero-name span{color:var(--gold);}
+.hero-sub{font-size:.65rem;color:rgba(255,255,255,.45);}
+
+/* Feature grid */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+.feat-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:12px;
+  transition:border-color .2s;
+}
+.feat-card:hover{border-color:var(--gold-border);}
+.feat-icon{font-size:.9rem;margin-bottom:6px;}
+.feat-title{font-size:.7rem;font-weight:700;color:var(--white);margin-bottom:2px;}
+.feat-sub{font-size:.58rem;color:rgba(255,255,255,.35);}
+
+/* Partner card */
+.partner-card{
+  background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.05));
+  border:1px solid var(--gold-border);border-radius:12px;
+  padding:12px 14px;display:flex;align-items:center;justify-content:space-between;
+}
+.partner-left{display:flex;align-items:center;gap:8px;}
+.partner-icon{
+  width:28px;height:28px;background:var(--gold-pale);border:1px solid var(--gold-border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;
+}
+.partner-badge{font-size:.5rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+.partner-name{font-size:.68rem;font-weight:700;color:var(--white);}
+.partner-btn{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy);font-size:.6rem;font-weight:700;border-radius:50px;
+  padding:5px 10px;
+}
+
+/* ── RIGHT SIDE TEXT ── */
+.features-list{display:flex;flex-direction:column;gap:20px;}
+.feat-row{display:flex;gap:16px;align-items:flex-start;}
+.feat-num{
+  width:36px;height:36px;background:var(--gold-pale);border:1px solid var(--gold-border);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--gold);
+  flex-shrink:0;
+}
+.feat-text h4{font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:4px;}
+.feat-text p{font-size:.8rem;color:var(--muted);line-height:1.55;}
+
+/* Color comparison */
+.comparison{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.comp-card{border-radius:16px;padding:24px;border:1px solid;}
+.comp-before{background:#1a0a0a;border-color:rgba(229,62,62,.3);}
+.comp-after{background:var(--navy-card);border-color:var(--gold-border);}
+.comp-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.comp-before .comp-label{color:#E53E3E;}
+.comp-after .comp-label{color:var(--gold);}
+.swatch-row{display:flex;flex-wrap:wrap;gap:8px;}
+.swatch{border-radius:8px;padding:8px 14px;font-size:.72rem;font-weight:600;}
+.sw-maple{background:#E53E3E;color:#fff;}
+.sw-red-btn{background:linear-gradient(135deg,#E53E3E,#C53030);color:#fff;border-radius:50px;padding:8px 16px;}
+.sw-gold{background:var(--gold);color:var(--navy);}
+.sw-gold-btn{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);border-radius:50px;padding:8px 16px;}
+.sw-gold-border{border:1.5px solid var(--gold-border);color:var(--gold-light);border-radius:50px;padding:7px 16px;}
+.sw-red-border{border:1.5px solid rgba(229,62,62,.4);color:#FC8181;border-radius:50px;padding:7px 16px;}
+
+/* CTAs */
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);
+  font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;
+  padding:12px 28px;border-radius:50px;border:none;cursor:pointer;
+}
+.btn-sec{
+  background:transparent;border:1.5px solid var(--gold-border);color:var(--gold-light);
+  font-family:'Sora',sans-serif;font-weight:600;font-size:.85rem;
+  padding:11px 28px;border-radius:50px;cursor:pointer;
+}
+.note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:8px;}
+
+@media(max-width:700px){
+  .two-col{grid-template-columns:1fr;}
+  .comparison{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="section">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="label">Aperçu des modifications proposées</div>
+    <h2>App + couleurs Gold<br>— ce que ça donne</h2>
+    <p class="sub">L'application reste identique. Seul l'accent <strong style="color:#E53E3E">rouge maple</strong> devient <strong style="color:var(--gold)">or #C9A84C</strong> pour s'aligner avec le site.</p>
+  </div>
+
+  <!-- COLOR COMPARISON -->
+  <div style="width:100%">
+    <p style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center;">Avant → Après</p>
+    <div class="comparison">
+      <div class="comp-card comp-before">
+        <div class="comp-label">Avant — Maple Red</div>
+        <div class="swatch-row">
+          <span class="swatch sw-maple">Accent #E53E3E</span>
+          <span class="swatch sw-red-btn">Bouton principal</span>
+          <span class="swatch sw-red-border">Bouton secondaire</span>
+        </div>
+      </div>
+      <div class="comp-card comp-after">
+        <div class="comp-label">Après — Gold</div>
+        <div class="swatch-row">
+          <span class="swatch sw-gold">Accent #C9A84C</span>
+          <span class="swatch sw-gold-btn">Bouton principal</span>
+          <span class="swatch sw-gold-border">Bouton secondaire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP MOCKUP + FEATURES -->
+  <div class="two-col">
+
+    <!-- Phone -->
+    <div class="phone">
+      <div class="phone-inner">
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <span>●●●</span><span>WiFi</span><span>🔋</span>
+          </div>
+        </div>
+
+        <div class="app-nav">
+          <div class="app-logo">Parcours<span>CA</span></div>
+          <div class="app-icons">
+            <!-- Bell -->
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <!-- Star -->
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-tag">★ Platine · Ontario (ON) · Résident permanent</div>
+          <div class="hero-name">Bonjour, Marie <span>👋</span></div>
+          <div class="hero-sub">Saison des impôts — 3 tâches urgentes</div>
+        </div>
+
+        <div class="feat-grid">
+          <div class="feat-card">
+            <div class="feat-icon">📄</div>
+            <div class="feat-title">Mes Documents</div>
+            <div class="feat-sub">Passeports, permis</div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="color:var(--gold)">💰</div>
+            <div class="feat-title">Impôts &amp; Fiscal</div>
+            <div class="feat-sub">T1, REER, CELI</div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🔧</div>
+            <div class="feat-title">Services</div>
+            <div class="feat-sub">Santé, logement</div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon" style="color:var(--gold)">🧭</div>
+            <div class="feat-title">Boussole</div>
+            <div class="feat-sub">Citoyenneté</div>
+          </div>
+        </div>
+
+        <div class="partner-card">
+          <div class="partner-left">
+            <div class="partner-icon">🏛</div>
+            <div>
+              <div class="partner-badge">★ Platine · Partenaire Officiel</div>
+              <div class="partner-name">Manheim Tax &amp; Accounting</div>
+            </div>
+          </div>
+          <div class="partner-btn">Offre →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features text -->
+    <div class="features-list">
+      <div class="feat-row">
+        <div class="feat-num">1</div>
+        <div class="feat-text">
+          <h4>L'app reste identique</h4>
+          <p>Structure, UX, animations — rien ne change. Seule la couleur d'accent passe de rouge maple à or pour unifier l'identité visuelle avec le site.</p>
+        </div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-num">2</div>
+        <div class="feat-text">
+          <h4>Un seul changement dans Tailwind</h4>
+          <p>Remplacer <code style="color:#E53E3E;font-size:.8rem">text-maple / bg-maple</code> par <code style="color:var(--gold);font-size:.8rem">text-gold / bg-gold</code> dans tailwind.config.ts. 10 minutes de travail.</p>
+        </div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-num">3</div>
+        <div class="feat-text">
+          <h4>Section "App mockup" à ajouter au site</h4>
+          <p>Le site ne montre pas l'app. Toute landing page SaaS a un mockup téléphone. On peut l'ajouter comme section 4.5 entre Mission et Piliers.</p>
+        </div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-num">4</div>
+        <div class="feat-text">
+          <h4>La mission paraphrasée — meilleure</h4>
+          <p>"La pierre angulaire de votre intégration — Entre le gouvernement et vous" est plus premium, plus institutionnel. À garder sur le site.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ACTIONS -->
+  <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;">
+    <div class="label">Que veux-tu faire ?</div>
+    <div class="cta-row">
+      <button class="btn-primary">Appliquer gold dans l'app React</button>
+      <button class="btn-sec">Ajouter mockup au site web</button>
+      <button class="btn-sec">Les deux</button>
+    </div>
+    <p class="note">Ces boutons sont décoratifs — dis-moi quoi faire dans le chat</p>
+  </div>
+
+</div>
+</body>
+</html>

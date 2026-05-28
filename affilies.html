@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Programme Affiliés ParcoursCA — Gagnez des commissions récurrentes en recommandant la référence de confiance pour tous les Canadiens." />
+  <title>Programme Affiliés — ParcoursCA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Sora:wght@300;400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       AFFILIES PAGE — Additional Styles
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── HERO AFFILIES ──────────────────────────────────────── */
+    .hero-affilies {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 68px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-affilies::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-affilies-inner {
+      position: relative;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 48px) clamp(60px, 8vw, 100px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+    .affilies-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .affilies-badge-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .hero-affilies h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 800px;
+    }
+    .hero-affilies h1 span { color: var(--gold); }
+    .hero-affilies-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .hero-affilies-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 8px;
+    }
+    .affilies-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .affilies-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .affilies-stat-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .affilies-stat-sep {
+      width: 1px;
+      height: 48px;
+      background: var(--border);
+    }
+    .hero-affilies-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* ── COMMISSION TABLE ───────────────────────────────────── */
+    .commissions-section {
+      padding: var(--section-py) 0;
+      background: var(--navy-mid);
+    }
+    .commissions-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-top: 16px;
+    }
+    .commissions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Sora', sans-serif;
+    }
+    .commissions-table thead tr {
+      background: var(--navy-light);
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .commissions-table th {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 18px 24px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .commissions-table td {
+      padding: 20px 24px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .commissions-table tbody tr {
+      background: var(--navy-card);
+      transition: background 0.2s;
+    }
+    .commissions-table tbody tr:last-child td { border-bottom: none; }
+    .commissions-table tbody tr:hover { background: var(--navy-light); }
+    .commissions-table tbody tr.popular-row { background: linear-gradient(90deg, var(--navy-light), var(--navy-card)); }
+    .table-plan-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.92rem;
+    }
+    .table-plan-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 50px;
+      padding: 2px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .table-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .table-commission {
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .table-earning {
+      font-weight: 700;
+      color: var(--white);
+    }
+    .table-duration {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .commissions-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      margin-top: 20px;
+      font-size: 0.84rem;
+      color: var(--off-white);
+      line-height: 1.6;
+    }
+    .commissions-note i { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+    /* ── HOW IT WORKS ───────────────────────────────────────── */
+    .how-section {
+      padding: var(--section-py) 0;
+      background: var(--navy);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 16px;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(16.66% + 24px);
+      right: calc(16.66% + 24px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-border), var(--gold), var(--gold-border));
+      pointer-events: none;
+    }
+    .step-card {
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+      position: relative;
+    }
+    .step-number {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--navy);
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    }
+    .step-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .step-card p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── BENEFITS ───────────────────────────────────────────── */
+    .benefits-section {
+      padding: var(--section-py) 0;
+      background: var(--navy-mid);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .benefit-card {
+      padding: 32px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .benefit-icon {
+      width: 50px; height: 50px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-icon i { width: 22px; height: 22px; color: var(--gold); }
+    .benefit-body { flex: 1; }
+    .benefit-body h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .benefit-body p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .benefit-tag {
+      display: inline-flex;
+      margin-top: 10px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-pale);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      padding: 3px 10px;
+    }
+
+    /* ── TIKTOK / INFLUENCEURS ──────────────────────────────── */
+    .influencer-section {
+      padding: var(--section-py) 0;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .influencer-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .influencer-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .influencer-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .influencer-text h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .influencer-text h2 span { color: var(--gold); }
+    .influencer-text p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .influencer-deal-box {
+      background: linear-gradient(135deg, var(--navy-card), var(--navy-light));
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .influencer-deal-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .deal-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .deal-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .deal-amount span { color: var(--gold); }
+    .deal-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .deal-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .deal-feature i { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    .deal-sub {
+      font-size: 0.75rem;
+      color: var(--muted-low);
+      line-height: 1.5;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    /* ── REGISTRATION FORM ──────────────────────────────────── */
+    .form-section {
+      padding: var(--section-py) 0;
+      background: var(--navy-mid);
+    }
+    .form-section .section-label,
+    .form-section .section-h2 {
+      text-align: center;
+      justify-content: center;
+    }
+    .form-section .section-desc {
+      text-align: center;
+      margin: 0 auto 40px;
+    }
+    .affiliate-form-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .affiliate-form {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .affiliate-form::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'DM Sans', 'Sora', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted-low);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%23C9A84C' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .form-group select option { background: var(--navy-mid); color: var(--white); }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-required {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+    .form-error {
+      font-size: 0.72rem;
+      color: #e05c5c;
+      display: none;
+    }
+    .form-error.visible { display: block; }
+    .form-submit-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .form-legal {
+      font-size: 0.72rem;
+      color: var(--muted-low);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .form-success {
+      display: none;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+    }
+    .form-success.visible { display: block; }
+
+    /* ── FAQ ────────────────────────────────────────────────── */
+    .faq-section {
+      padding: var(--section-py) 0;
+      background: var(--navy);
+    }
+    .faq-section .section-label,
+    .faq-section .section-h2 {
+      text-align: center;
+      justify-content: center;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--gold-border); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 28px;
+      cursor: pointer;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      user-select: none;
+      transition: color 0.18s;
+    }
+    .faq-question:hover { color: var(--gold-light); }
+    .faq-item.open .faq-question { color: var(--gold-light); }
+    .faq-chevron {
+      width: 20px; height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 28px 22px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .influencer-inner { grid-template-columns: 1fr; gap: 40px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; gap: 0; }
+      .steps-grid::before { display: none; }
+      .step-card { align-items: flex-start; text-align: left; flex-direction: row; gap: 20px; }
+      .step-card > div { flex: 1; }
+      .form-row { grid-template-columns: 1fr; }
+      .affiliate-form { padding: 32px 24px; }
+      .hero-affilies-stats { gap: 16px; }
+      .affilies-stat-sep { display: none; }
+    }
+    @media (max-width: 480px) {
+      .step-card { flex-direction: column; align-items: center; text-align: center; }
+      .hero-affilies h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAV (copied from index.html)
+═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <div class="logo-medallion">
+        <svg width="15" height="17" viewBox="0 0 40 44" fill="none">
+          <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#g1)"/>
+          <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
+          <defs>
+            <linearGradient id="g1" x1="10" y1="3" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">PARCOURS<span class="logo-accent">CA</span></span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="desktop-nav">
+      <a href="index.html#mission" class="nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+      <a href="index.html#features" class="nav-link" data-fr="L'application" data-en="The App">L'application</a>
+      <a href="index.html#tarifs" class="nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+      <a href="index.html#gouvernement" class="nav-link" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+      <a href="index.html#partenaires" class="nav-link" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+      <a href="affilies.html" class="nav-link" style="color:var(--gold-light);" data-fr="Affiliés" data-en="Affiliates">Affiliés</a>
+    </div>
+
+    <!-- Right controls -->
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="https://app.parcoursca.ca" class="btn-primary btn-sm" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#mission" class="mobile-nav-link" data-fr="Mission" data-en="Mission">Mission</a>
+    <a href="index.html#features" class="mobile-nav-link" data-fr="L'application" data-en="The App">L'application</a>
+    <a href="index.html#tarifs" class="mobile-nav-link" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+    <a href="index.html#gouvernement" class="mobile-nav-link" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+    <a href="index.html#partenaires" class="mobile-nav-link" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+    <a href="affilies.html" class="mobile-nav-link" style="color:var(--gold-light);" data-fr="Affiliés" data-en="Affiliates">Affiliés</a>
+    <a href="https://app.parcoursca.ca" class="btn-primary" data-fr="Ouvrir l'app →" data-en="Open App →">Ouvrir l'app →</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="hero-affilies" id="hero">
+  <div class="hero-affilies-inner">
+
+    <div class="affilies-badge">
+      <span class="affilies-badge-dot"></span>
+      <span data-fr="🤝 Devenez Ambassadeur" data-en="🤝 Become an Ambassador">🤝 Devenez Ambassadeur</span>
+    </div>
+
+    <h1 data-fr="Programme Affiliés <span>ParcoursCA</span>" data-en="<span>ParcoursCA</span> Affiliate Program">
+      Programme Affiliés <span>ParcoursCA</span>
+    </h1>
+
+    <p class="hero-affilies-sub" data-fr="Gagnez des commissions récurrentes en recommandant la référence de confiance pour tous les Canadiens. Rejoignez notre réseau d'ambassadeurs et encaissez chaque mois." data-en="Earn recurring commissions by recommending the trusted reference for all Canadians. Join our ambassador network and get paid every month.">
+      Gagnez des commissions récurrentes en recommandant la référence de confiance pour tous les Canadiens. Rejoignez notre réseau d'ambassadeurs et encaissez chaque mois.
+    </p>
+
+    <div class="hero-affilies-stats">
+      <div class="affilies-stat">
+        <span class="affilies-stat-number">25%</span>
+        <span class="affilies-stat-label" data-fr="Commission récurrente" data-en="Recurring commission">Commission récurrente</span>
+      </div>
+      <div class="affilies-stat-sep"></div>
+      <div class="affilies-stat">
+        <span class="affilies-stat-number">6</span>
+        <span class="affilies-stat-label" data-fr="Mois par référence" data-en="Months per referral">Mois par référence</span>
+      </div>
+      <div class="affilies-stat-sep"></div>
+      <div class="affilies-stat">
+        <span class="affilies-stat-number">−15%</span>
+        <span class="affilies-stat-label" data-fr="Code promo exclusif" data-en="Exclusive promo code">Code promo exclusif</span>
+      </div>
+      <div class="affilies-stat-sep"></div>
+      <div class="affilies-stat">
+        <span class="affilies-stat-number">Stripe</span>
+        <span class="affilies-stat-label" data-fr="Paiement mensuel" data-en="Monthly payout">Paiement mensuel</span>
+      </div>
+    </div>
+
+    <div class="hero-affilies-cta">
+      <a href="#inscription" class="btn-primary btn-lg" data-fr="Rejoindre le programme →" data-en="Join the program →">Rejoindre le programme →</a>
+      <a href="#commissions" class="btn-secondary btn-lg" data-fr="Voir les commissions" data-en="View commissions">Voir les commissions</a>
+    </div>
+
+    <div class="hero-trust">
+      <span class="trust-badge"><i data-lucide="shield"></i><span data-fr="Paiements sécurisés" data-en="Secure payouts">Paiements sécurisés</span></span>
+      <span class="trust-badge"><i data-lucide="bar-chart-2"></i><span data-fr="Dashboard temps réel" data-en="Real-time dashboard">Dashboard temps réel</span></span>
+      <span class="trust-badge"><i data-lucide="globe"></i><span data-fr="Ouvert au Canada" data-en="Open to Canada">Ouvert au Canada</span></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — COMMISSIONS TABLE
+═══════════════════════════════════════════════════════════ -->
+<section class="commissions-section" id="commissions">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Structure des commissions" data-en="Commission structure">Structure des commissions</span>
+    </div>
+    <h2 class="section-h2" data-fr="Gagnez sur chaque abonnement" data-en="Earn on every subscription">
+      Gagnez sur chaque abonnement
+    </h2>
+    <p class="section-desc" data-fr="25% de commission récurrente pendant 6 mois sur chaque utilisateur que vous référez. Plus vous partagez, plus vous encaissez." data-en="25% recurring commission for 6 months on every user you refer. The more you share, the more you earn.">
+      25% de commission récurrente pendant 6 mois sur chaque utilisateur que vous référez. Plus vous partagez, plus vous encaissez.
+    </p>
+
+    <div class="commissions-table-wrap">
+      <table class="commissions-table">
+        <thead>
+          <tr>
+            <th data-fr="Plan" data-en="Plan">Plan</th>
+            <th data-fr="Prix mensuel" data-en="Monthly price">Prix mensuel</th>
+            <th data-fr="Commission" data-en="Commission">Commission</th>
+            <th data-fr="Gain / mois / filleul" data-en="Gain / month / referral">Gain / mois / filleul</th>
+            <th data-fr="Durée" data-en="Duration">Durée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="table-plan-name" data-fr="Essentielle" data-en="Essential">Essentielle</span>
+            </td>
+            <td><span class="table-price">4,99 US$</span></td>
+            <td><span class="table-commission">25%</span></td>
+            <td><span class="table-earning" data-fr="~1,25 $/mois" data-en="~$1.25/mo">~1,25 $/mois</span></td>
+            <td><span class="table-duration" data-fr="6 mois" data-en="6 months">6 mois</span></td>
+          </tr>
+          <tr class="popular-row">
+            <td>
+              <span class="table-plan-name" data-fr="Avantage" data-en="Advantage">Avantage</span>
+              <span class="table-plan-badge" data-fr="POPULAIRE" data-en="POPULAR">POPULAIRE</span>
+            </td>
+            <td><span class="table-price">9,99 US$</span></td>
+            <td><span class="table-commission">25%</span></td>
+            <td><span class="table-earning" data-fr="~2,50 $/mois" data-en="~$2.50/mo">~2,50 $/mois</span></td>
+            <td><span class="table-duration" data-fr="6 mois" data-en="6 months">6 mois</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="table-plan-name" data-fr="Prestige" data-en="Prestige">Prestige</span>
+            </td>
+            <td><span class="table-price">16,99 US$</span></td>
+            <td><span class="table-commission">25%</span></td>
+            <td><span class="table-earning" data-fr="~4,25 $/mois" data-en="~$4.25/mo">~4,25 $/mois</span></td>
+            <td><span class="table-duration" data-fr="6 mois" data-en="6 months">6 mois</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="commissions-note">
+      <i data-lucide="info"></i>
+      <span data-fr="Les commissions sont calculées sur le prix mensuel hors taxes et versées chaque mois via Stripe ou PayPal. Un filleul actif génère des commissions pendant 6 mois consécutifs à partir de son premier paiement. Exemple : 10 filleuls sur le plan Avantage = 25 $/mois pendant 6 mois." data-en="Commissions are calculated on the monthly price before taxes and paid monthly via Stripe or PayPal. An active referral generates commissions for 6 consecutive months from their first payment. Example: 10 referrals on Advantage plan = $25/month for 6 months.">Les commissions sont calculées sur le prix mensuel hors taxes et versées chaque mois via Stripe ou PayPal. Un filleul actif génère des commissions pendant 6 mois consécutifs à partir de son premier paiement. Exemple : 10 filleuls sur le plan Avantage = 25 $/mois pendant 6 mois.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — COMMENT ÇA MARCHE
+═══════════════════════════════════════════════════════════ -->
+<section class="how-section" id="comment-ca-marche">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Comment ça marche" data-en="How it works">Comment ça marche</span>
+    </div>
+    <h2 class="section-h2" data-fr="Trois étapes pour commencer" data-en="Three steps to get started">
+      Trois étapes pour commencer
+    </h2>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div>
+          <h3 data-fr="Inscrivez-vous" data-en="Sign up">Inscrivez-vous</h3>
+          <p data-fr="Remplissez le formulaire ci-dessous. Notre équipe examine votre candidature et vous envoie votre code affilié unique sous 48 heures." data-en="Fill in the form below. Our team reviews your application and sends you your unique affiliate code within 48 hours.">Remplissez le formulaire ci-dessous. Notre équipe examine votre candidature et vous envoie votre code affilié unique sous 48 heures.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div>
+          <h3 data-fr="Partagez votre code" data-en="Share your code">Partagez votre code</h3>
+          <p data-fr="Partagez votre lien affilié et votre code promo exclusif (-15%) sur vos réseaux sociaux, votre chaîne YouTube, TikTok, votre blog ou votre communauté." data-en="Share your affiliate link and exclusive promo code (-15%) on your social media, YouTube channel, TikTok, blog or community.">Partagez votre lien affilié et votre code promo exclusif (-15%) sur vos réseaux sociaux, votre chaîne YouTube, TikTok, votre blog ou votre communauté.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div>
+          <h3 data-fr="Encaissez vos commissions" data-en="Collect your commissions">Encaissez vos commissions</h3>
+          <p data-fr="Chaque mois, vos commissions sont automatiquement calculées et versées via Stripe ou PayPal. Suivez vos performances en temps réel dans votre dashboard affilié." data-en="Each month, your commissions are automatically calculated and paid via Stripe or PayPal. Track your performance in real time in your affiliate dashboard.">Chaque mois, vos commissions sont automatiquement calculées et versées via Stripe ou PayPal. Suivez vos performances en temps réel dans votre dashboard affilié.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 — AVANTAGES
+═══════════════════════════════════════════════════════════ -->
+<section class="benefits-section" id="avantages">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Vos avantages" data-en="Your benefits">Vos avantages</span>
+    </div>
+    <h2 class="section-h2" data-fr="Tout ce que vous obtenez" data-en="Everything you get">
+      Tout ce que vous obtenez
+    </h2>
+
+    <div class="benefits-grid">
+
+      <div class="card benefit-card">
+        <div class="benefit-icon">
+          <i data-lucide="refresh-cw"></i>
+        </div>
+        <div class="benefit-body">
+          <h3 data-fr="Commission récurrente — 6 mois" data-en="Recurring commission — 6 months">Commission récurrente — 6 mois</h3>
+          <p data-fr="Contrairement à un simple bonus d'inscription, vous gagnez 25% sur chaque paiement mensuel de vos filleuls pendant 6 mois consécutifs. Une référence active se transforme en revenu durable." data-en="Unlike a simple sign-up bonus, you earn 25% on every monthly payment from your referrals for 6 consecutive months. One active referral becomes lasting income.">Contrairement à un simple bonus d'inscription, vous gagnez 25% sur chaque paiement mensuel de vos filleuls pendant 6 mois consécutifs. Une référence active se transforme en revenu durable.</p>
+          <span class="benefit-tag" data-fr="Récurrent · 6 mois" data-en="Recurring · 6 months">Récurrent · 6 mois</span>
+        </div>
+      </div>
+
+      <div class="card benefit-card">
+        <div class="benefit-icon">
+          <i data-lucide="tag"></i>
+        </div>
+        <div class="benefit-body">
+          <h3 data-fr="Code promo exclusif −15%" data-en="Exclusive promo code −15%">Code promo exclusif −15%</h3>
+          <p data-fr="Chaque ambassadeur reçoit un code promo personnalisé offrant 15% de réduction à ses followers. C'est un incitatif puissant qui booste vos conversions tout en offrant une valeur réelle à votre audience." data-en="Each ambassador receives a personalized promo code offering 15% off to their followers. It's a powerful incentive that boosts your conversions while delivering real value to your audience.">Chaque ambassadeur reçoit un code promo personnalisé offrant 15% de réduction à ses followers. C'est un incitatif puissant qui booste vos conversions tout en offrant une valeur réelle à votre audience.</p>
+          <span class="benefit-tag" data-fr="−15% pour vos followers" data-en="−15% for your followers">−15% pour vos followers</span>
+        </div>
+      </div>
+
+      <div class="card benefit-card">
+        <div class="benefit-icon">
+          <i data-lucide="credit-card"></i>
+        </div>
+        <div class="benefit-body">
+          <h3 data-fr="Paiement mensuel via Stripe ou PayPal" data-en="Monthly payout via Stripe or PayPal">Paiement mensuel via Stripe ou PayPal</h3>
+          <p data-fr="Vos commissions sont versées automatiquement chaque mois dès que le seuil minimum de 20 $ est atteint. Aucune démarche manuelle, aucun délai — votre argent arrive directement dans votre compte." data-en="Your commissions are paid automatically each month once the $20 minimum threshold is reached. No manual steps, no delays — your money goes straight to your account.">Vos commissions sont versées automatiquement chaque mois dès que le seuil minimum de 20 $ est atteint. Aucune démarche manuelle, aucun délai — votre argent arrive directement dans votre compte.</p>
+          <span class="benefit-tag" data-fr="Stripe · PayPal" data-en="Stripe · PayPal">Stripe · PayPal</span>
+        </div>
+      </div>
+
+      <div class="card benefit-card">
+        <div class="benefit-icon">
+          <i data-lucide="layout-dashboard"></i>
+        </div>
+        <div class="benefit-body">
+          <h3 data-fr="Dashboard affilié temps réel" data-en="Real-time affiliate dashboard">Dashboard affilié temps réel</h3>
+          <p data-fr="Suivez vos clics, conversions, filleuls actifs et commissions générées en temps réel depuis votre tableau de bord affilié sécurisé. Exportez vos rapports à tout moment." data-en="Track your clicks, conversions, active referrals and generated commissions in real time from your secure affiliate dashboard. Export your reports at any time.">Suivez vos clics, conversions, filleuls actifs et commissions générées en temps réel depuis votre tableau de bord affilié sécurisé. Exportez vos rapports à tout moment.</p>
+          <span class="benefit-tag" data-fr="Temps réel · Export CSV" data-en="Real-time · CSV export">Temps réel · Export CSV</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — CRÉATEURS / TIKTOK / INFLUENCEURS
+═══════════════════════════════════════════════════════════ -->
+<section class="influencer-section" id="createurs">
+  <div class="container">
+    <div class="influencer-inner">
+
+      <div class="influencer-text">
+        <div class="section-label">
+          <span data-fr="Créateurs de contenu" data-en="Content creators">Créateurs de contenu</span>
+        </div>
+        <h2 data-fr="Deal spécial pour les <span>influenceurs</span>" data-en="Special deal for <span>influencers</span>">
+          Deal spécial pour les <span>influenceurs</span>
+        </h2>
+        <p data-fr="Vous avez une audience sur TikTok, Instagram, YouTube ou un podcast ? Nous avons un programme sur mesure qui combine un forfait fixe et des commissions supérieures. Idéal pour les créateurs de contenu francophones qui touchent la diaspora, les nouveaux arrivants ou la communauté immigrante canadienne." data-en="You have an audience on TikTok, Instagram, YouTube or a podcast? We have a tailored program combining a flat fee and higher commissions. Ideal for francophone content creators reaching the diaspora, newcomers or the Canadian immigrant community.">
+          Vous avez une audience sur TikTok, Instagram, YouTube ou un podcast ? Nous avons un programme sur mesure qui combine un forfait fixe et des commissions supérieures. Idéal pour les créateurs de contenu francophones qui touchent la diaspora, les nouveaux arrivants ou la communauté immigrante canadienne.
+        </p>
+        <p data-fr="Contactez-nous directement après votre inscription pour discuter d'un partenariat personnalisé — nous répondons sous 24 heures." data-en="Contact us directly after signing up to discuss a personalized partnership — we respond within 24 hours.">
+          Contactez-nous directement après votre inscription pour discuter d'un partenariat personnalisé — nous répondons sous 24 heures.
+        </p>
+        <div>
+          <a href="#inscription" class="btn-primary" data-fr="Postuler maintenant →" data-en="Apply now →">Postuler maintenant →</a>
+        </div>
+      </div>
+
+      <div class="influencer-deal-box">
+        <div class="deal-label" data-fr="Deal créateurs — conditions indicatives" data-en="Creator deal — indicative terms">Deal créateurs — conditions indicatives</div>
+        <div class="deal-amount">
+          <span data-fr="150 $ – 300 $" data-en="$150 – $300">150 $ – 300 $</span> CAD
+          <br>
+          <span style="font-size:1rem; color:var(--muted); font-family:'Sora',sans-serif; font-weight:400;" data-fr="+ commissions 20–25%" data-en="+ 20–25% commissions">+ commissions 20–25%</span>
+        </div>
+        <div class="deal-features">
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Forfait fixe à la publication (story, vidéo, reel)" data-en="Flat fee per publication (story, video, reel)">Forfait fixe à la publication (story, vidéo, reel)</span>
+          </div>
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Commission augmentée : 20% à 25% selon l'audience" data-en="Increased commission: 20% to 25% based on audience">Commission augmentée : 20% à 25% selon l'audience</span>
+          </div>
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Code promo exclusif pour vos abonnés" data-en="Exclusive promo code for your subscribers">Code promo exclusif pour vos abonnés</span>
+          </div>
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Accès Prestige offert (valeur 16,99 $/mois)" data-en="Complimentary Prestige access (value $16.99/mo)">Accès Prestige offert (valeur 16,99 $/mois)</span>
+          </div>
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Matériel créatif fourni (visuels, scripts)" data-en="Creative materials provided (visuals, scripts)">Matériel créatif fourni (visuels, scripts)</span>
+          </div>
+          <div class="deal-feature">
+            <i data-lucide="check-circle"></i>
+            <span data-fr="Gestionnaire de compte dédié" data-en="Dedicated account manager">Gestionnaire de compte dédié</span>
+          </div>
+        </div>
+        <div class="deal-sub" data-fr="Les conditions finales varient selon l'audience, l'engagement et le type de contenu. Éligible dès 1 000 abonnés engagés. TikTok, Instagram, YouTube, Facebook, LinkedIn, Podcast." data-en="Final terms vary based on audience size, engagement and content type. Eligible from 1,000 engaged followers. TikTok, Instagram, YouTube, Facebook, LinkedIn, Podcast.">
+          Les conditions finales varient selon l'audience, l'engagement et le type de contenu. Éligible dès 1 000 abonnés engagés. TikTok, Instagram, YouTube, Facebook, LinkedIn, Podcast.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 6 — FORMULAIRE D'INSCRIPTION
+═══════════════════════════════════════════════════════════ -->
+<section class="form-section" id="inscription">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Formulaire d'inscription" data-en="Registration form">Formulaire d'inscription</span>
+    </div>
+    <h2 class="section-h2" data-fr="Rejoignez le programme affiliés" data-en="Join the affiliate program">
+      Rejoignez le programme affiliés
+    </h2>
+    <p class="section-desc" data-fr="Remplissez le formulaire ci-dessous. Notre équipe vous contacte sous 48 heures ouvrables avec votre code affilié et vos accès." data-en="Fill in the form below. Our team will contact you within 48 business hours with your affiliate code and access.">
+      Remplissez le formulaire ci-dessous. Notre équipe vous contacte sous 48 heures ouvrables avec votre code affilié et vos accès.
+    </p>
+
+    <div class="affiliate-form-wrap">
+      <form class="affiliate-form" id="affiliateForm" action="mailto:affilies@parcoursca.ca" method="post" enctype="text/plain" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="aff-name" data-fr="Nom complet <span class='form-required'>*</span>" data-en="Full name <span class='form-required'>*</span>">Nom complet <span class="form-required">*</span></label>
+            <input type="text" id="aff-name" name="nom" required
+              data-fr="Ex : Sophie Tremblay" data-en="E.g. Sophie Tremblay"
+              placeholder="Ex : Sophie Tremblay" />
+            <span class="form-error" id="err-name" data-fr="Veuillez entrer votre nom complet." data-en="Please enter your full name.">Veuillez entrer votre nom complet.</span>
+          </div>
+          <div class="form-group">
+            <label for="aff-email" data-fr="Adresse courriel <span class='form-required'>*</span>" data-en="Email address <span class='form-required'>*</span>">Adresse courriel <span class="form-required">*</span></label>
+            <input type="email" id="aff-email" name="courriel" required
+              data-fr="Ex : sophie@exemple.ca" data-en="E.g. sophie@example.ca"
+              placeholder="Ex : sophie@exemple.ca" />
+            <span class="form-error" id="err-email" data-fr="Veuillez entrer une adresse courriel valide." data-en="Please enter a valid email address.">Veuillez entrer une adresse courriel valide.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="aff-platform" data-fr="Plateforme ou URL de votre chaîne <span class='form-required'>*</span>" data-en="Platform or channel URL <span class='form-required'>*</span>">Plateforme ou URL de votre chaîne <span class="form-required">*</span></label>
+          <input type="url" id="aff-platform" name="plateforme" required
+            data-fr="Ex : https://www.tiktok.com/@votre-compte" data-en="E.g. https://www.tiktok.com/@your-account"
+            placeholder="Ex : https://www.tiktok.com/@votre-compte" />
+          <span class="form-error" id="err-platform" data-fr="Veuillez entrer l'URL de votre plateforme." data-en="Please enter your platform URL.">Veuillez entrer l'URL de votre plateforme.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="aff-audience" data-fr="Taille de votre audience <span class='form-required'>*</span>" data-en="Audience size <span class='form-required'>*</span>">Taille de votre audience <span class="form-required">*</span></label>
+            <select id="aff-audience" name="audience" required>
+              <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+              <option value="under-1k" data-fr="Moins de 1 000 abonnés" data-en="Under 1,000 followers">Moins de 1 000 abonnés</option>
+              <option value="1k-5k" data-fr="1 000 – 5 000 abonnés" data-en="1,000 – 5,000 followers">1 000 – 5 000 abonnés</option>
+              <option value="5k-20k" data-fr="5 000 – 20 000 abonnés" data-en="5,000 – 20,000 followers">5 000 – 20 000 abonnés</option>
+              <option value="20k-100k" data-fr="20 000 – 100 000 abonnés" data-en="20,000 – 100,000 followers">20 000 – 100 000 abonnés</option>
+              <option value="100k-plus" data-fr="100 000+ abonnés" data-en="100,000+ followers">100 000+ abonnés</option>
+              <option value="no-audience" data-fr="Je n'ai pas de réseaux sociaux" data-en="I don't have social media">Je n'ai pas de réseaux sociaux</option>
+            </select>
+            <span class="form-error" id="err-audience" data-fr="Veuillez sélectionner la taille de votre audience." data-en="Please select your audience size.">Veuillez sélectionner la taille de votre audience.</span>
+          </div>
+          <div class="form-group">
+            <label for="aff-lang" data-fr="Langue de communication <span class='form-required'>*</span>" data-en="Communication language <span class='form-required'>*</span>">Langue de communication <span class="form-required">*</span></label>
+            <select id="aff-lang" name="langue" required>
+              <option value="" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+              <option value="fr" data-fr="Français" data-en="French">Français</option>
+              <option value="en" data-fr="Anglais" data-en="English">Anglais</option>
+              <option value="fr-en" data-fr="Français et anglais" data-en="French and English">Français et anglais</option>
+              <option value="other" data-fr="Autre langue" data-en="Other language">Autre langue</option>
+            </select>
+            <span class="form-error" id="err-lang" data-fr="Veuillez sélectionner votre langue." data-en="Please select your language.">Veuillez sélectionner votre langue.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="aff-message" data-fr="Décrivez votre audience et votre contenu (optionnel)" data-en="Describe your audience and content (optional)">Décrivez votre audience et votre contenu (optionnel)</label>
+          <textarea id="aff-message" name="message"
+            data-fr="Ex : Je crée du contenu sur la finance personnelle pour les nouveaux arrivants au Canada..."
+            data-en="E.g. I create content on personal finance for newcomers to Canada..."
+            placeholder="Ex : Je crée du contenu sur la finance personnelle pour les nouveaux arrivants au Canada..."></textarea>
+        </div>
+
+        <div class="form-submit-wrap">
+          <button type="submit" class="btn-primary btn-lg" data-fr="Envoyer ma candidature →" data-en="Submit my application →">Envoyer ma candidature →</button>
+          <p class="form-legal" data-fr="En soumettant ce formulaire, vous acceptez d'être contacté par l'équipe ParcoursCA concernant le programme affiliés. Vos données ne sont jamais revendues." data-en="By submitting this form, you agree to be contacted by the ParcoursCA team about the affiliate program. Your data is never sold.">
+            En soumettant ce formulaire, vous acceptez d'être contacté par l'équipe ParcoursCA concernant le programme affiliés. Vos données ne sont jamais revendues.
+          </p>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <i data-lucide="check-circle" style="color:var(--gold);display:inline-block;width:20px;height:20px;margin-bottom:8px;"></i>
+          <p data-fr="Merci ! Votre candidature a été envoyée. Notre équipe vous contacte sous 48 heures ouvrables." data-en="Thank you! Your application has been sent. Our team will contact you within 48 business hours.">Merci ! Votre candidature a été envoyée. Notre équipe vous contacte sous 48 heures ouvrables.</p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 7 — FAQ
+═══════════════════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-label">
+      <span data-fr="Questions fréquentes" data-en="Frequently asked questions">Questions fréquentes</span>
+    </div>
+    <h2 class="section-h2" data-fr="Tout ce que vous devez savoir" data-en="Everything you need to know">
+      Tout ce que vous devez savoir
+    </h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-fr="Comment sont calculées et versées mes commissions ?" data-en="How are my commissions calculated and paid?">Comment sont calculées et versées mes commissions ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" data-fr="Vos commissions représentent 25% du prix mensuel hors taxes de chaque abonnement souscrit par un utilisateur via votre lien ou code affilié. Elles sont calculées automatiquement à la fin de chaque mois et versées entre le 1er et le 5 du mois suivant via Stripe ou PayPal, dès que votre solde atteint le seuil minimum de 20 $. Pour le plan Avantage à 9,99 $, vous gagnez ~2,50 $ par filleul actif, pendant 6 mois — soit jusqu'à 15 $ par filleul sur toute la durée." data-en="Your commissions represent 25% of the monthly price before taxes of each subscription taken out by a user through your affiliate link or code. They are automatically calculated at the end of each month and paid between the 1st and 5th of the following month via Stripe or PayPal, once your balance reaches the $20 minimum threshold. For the Advantage plan at $9.99, you earn ~$2.50 per active referral, for 6 months — up to $15 per referral over the full period.">Vos commissions représentent 25% du prix mensuel hors taxes de chaque abonnement souscrit par un utilisateur via votre lien ou code affilié. Elles sont calculées automatiquement à la fin de chaque mois et versées entre le 1er et le 5 du mois suivant via Stripe ou PayPal, dès que votre solde atteint le seuil minimum de 20 $. Pour le plan Avantage à 9,99 $, vous gagnez ~2,50 $ par filleul actif, pendant 6 mois — soit jusqu'à 15 $ par filleul sur toute la durée.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-fr="Qui peut devenir affilié ParcoursCA ?" data-en="Who can become a ParcoursCA affiliate?">Qui peut devenir affilié ParcoursCA ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" data-fr="Toute personne résidant au Canada peut rejoindre notre programme affilié, qu'elle soit créatrice de contenu, blogueuse, conseillère d'immigration, travailleuse sociale, enseignante, ou simplement quelqu'un avec un réseau de connaissance. Il n'y a pas de minimum d'abonnés requis pour le programme standard — nous évaluons chaque candidature individuellement. Pour le programme créateurs (deal influenceur), nous demandons un minimum de 1 000 abonnés engagés." data-en="Anyone residing in Canada can join our affiliate program, whether they are a content creator, blogger, immigration consultant, social worker, teacher, or simply someone with a network. There is no minimum follower count required for the standard program — we evaluate each application individually. For the creator program (influencer deal), we require a minimum of 1,000 engaged followers.">Toute personne résidant au Canada peut rejoindre notre programme affilié, qu'elle soit créatrice de contenu, blogueuse, conseillère d'immigration, travailleuse sociale, enseignante, ou simplement quelqu'un avec un réseau de connaissance. Il n'y a pas de minimum d'abonnés requis pour le programme standard — nous évaluons chaque candidature individuellement. Pour le programme créateurs (deal influenceur), nous demandons un minimum de 1 000 abonnés engagés.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-fr="Comment fonctionne le code promo exclusif pour mes followers ?" data-en="How does the exclusive promo code for my followers work?">Comment fonctionne le code promo exclusif pour mes followers ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" data-fr="Dès votre approbation, vous recevez un code promo unique (ex : SOPHIE15) offrant 15% de réduction sur le premier mois d'abonnement à vos followers. Quand ils l'utilisent, l'achat est automatiquement attribué à votre compte affilié et vos commissions s'activent. Ce code est partageable librement sur toutes les plateformes — TikTok, Instagram, YouTube, newsletters, podcasts, etc." data-en="Upon approval, you receive a unique promo code (e.g. SOPHIE15) offering 15% off the first month of subscription to your followers. When they use it, the purchase is automatically attributed to your affiliate account and your commissions activate. This code is freely shareable across all platforms — TikTok, Instagram, YouTube, newsletters, podcasts, etc.">Dès votre approbation, vous recevez un code promo unique (ex : SOPHIE15) offrant 15% de réduction sur le premier mois d'abonnement à vos followers. Quand ils l'utilisent, l'achat est automatiquement attribué à votre compte affilié et vos commissions s'activent. Ce code est partageable librement sur toutes les plateformes — TikTok, Instagram, YouTube, newsletters, podcasts, etc.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-fr="Y a-t-il un seuil minimum de paiement ?" data-en="Is there a minimum payment threshold?">Y a-t-il un seuil minimum de paiement ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" data-fr="Oui, le seuil minimum de versement est de 20 $ CAD. Si votre solde mensuel est inférieur à ce montant, il est reporté au mois suivant et cumulé jusqu'à ce que le seuil soit atteint. Il n'y a pas de délai d'expiration sur vos commissions accumulées — elles restent dans votre compte jusqu'au paiement." data-en="Yes, the minimum payment threshold is $20 CAD. If your monthly balance is below this amount, it rolls over to the following month and accumulates until the threshold is reached. There is no expiry on your accumulated commissions — they remain in your account until payment.">Oui, le seuil minimum de versement est de 20 $ CAD. Si votre solde mensuel est inférieur à ce montant, il est reporté au mois suivant et cumulé jusqu'à ce que le seuil soit atteint. Il n'y a pas de délai d'expiration sur vos commissions accumulées — elles restent dans votre compte jusqu'au paiement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span data-fr="Puis-je promouvoir ParcoursCA dans plusieurs langues ?" data-en="Can I promote ParcoursCA in multiple languages?">Puis-je promouvoir ParcoursCA dans plusieurs langues ?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner" data-fr="Absolument. ParcoursCA est disponible en 15 langues — incluant le français, l'anglais, l'espagnol, le créole haïtien, le mandarin, le hindi, l'ukrainien, le russe et 4 langues autochtones. Vous pouvez promouvoir l'application dans la langue de votre audience. Nous fournissons des matériaux créatifs (visuels, scripts) dans les principales langues sur demande." data-en="Absolutely. ParcoursCA is available in 15 languages — including French, English, Spanish, Haitian Creole, Mandarin, Hindi, Ukrainian, Russian and 4 Indigenous languages. You can promote the app in your audience's language. We provide creative materials (visuals, scripts) in major languages on request.">Absolument. ParcoursCA est disponible en 15 langues — incluant le français, l'anglais, l'espagnol, le créole haïtien, le mandarin, le hindi, l'ukrainien, le russe et 4 langues autochtones. Vous pouvez promouvoir l'application dans la langue de votre audience. Nous fournissons des matériaux créatifs (visuels, scripts) dans les principales langues sur demande.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 8 — CTA FINAL
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="rejoindre">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label" style="justify-content:center;">
+        <span data-fr="Prêt à commencer ?" data-en="Ready to start?">Prêt à commencer ?</span>
+      </div>
+      <h2 class="cta-h2" data-fr="Devenez ambassadeur ParcoursCA" data-en="Become a ParcoursCA ambassador">
+        Devenez ambassadeur ParcoursCA
+      </h2>
+      <p data-fr="Rejoignez notre réseau d'affiliés et gagnez des commissions récurrentes en aidant les Canadiens à accéder à la référence de confiance pour naviguer le système canadien." data-en="Join our affiliate network and earn recurring commissions by helping Canadians access the trusted reference for navigating the Canadian system.">
+        Rejoignez notre réseau d'affiliés et gagnez des commissions récurrentes en aidant les Canadiens à accéder à la référence de confiance pour naviguer le système canadien.
+      </p>
+      <div class="cta-buttons">
+        <a href="#inscription" class="btn-primary btn-lg" data-fr="Rejoindre le programme →" data-en="Join the program →">Rejoindre le programme →</a>
+        <a href="mailto:affilies@parcoursca.ca" class="btn-secondary btn-lg" data-fr="Nous écrire" data-en="Email us">Nous écrire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER (copied from index.html)
+═══════════════════════════════════════════════════════════ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px;">
+          <div class="logo-medallion">
+            <svg width="15" height="17" viewBox="0 0 40 44" fill="none">
+              <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5L20 3Z" fill="url(#g2)"/>
+              <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
+              <defs>
+                <linearGradient id="g2" x1="10" y1="3" x2="30" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E2C47A"/><stop offset="1" stop-color="#9D7928"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">PARCOURS<span class="logo-accent">CA</span></span>
+        </div>
+        <p data-fr="La référence de confiance pour peuples autochtones, citoyens canadiens et nouveaux arrivants." data-en="The trusted reference for Indigenous peoples, Canadian citizens and newcomers.">La référence de confiance pour peuples autochtones, citoyens canadiens et nouveaux arrivants.</p>
+        <p class="footer-tagline" data-fr="Institutionnelle · Multilingue · Sécurisée — ParcoursCA." data-en="Institutional · Multilingual · Secure — ParcoursCA."><em>Institutionnelle · Multilingue · Sécurisée — ParcoursCA.</em></p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h5 data-fr="Application" data-en="Application">Application</h5>
+          <a href="https://app.parcoursca.ca" data-fr="Ouvrir l'app" data-en="Open app">Ouvrir l'app</a>
+          <a href="index.html#features" data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</a>
+          <a href="index.html#tarifs" data-fr="Tarifs" data-en="Pricing">Tarifs</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-fr="Entreprise" data-en="Company">Entreprise</h5>
+          <a href="index.html#mission" data-fr="Notre mission" data-en="Our mission">Notre mission</a>
+          <a href="index.html#partenaires" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+          <a href="index.html#gouvernement" data-fr="Gouvernement" data-en="Government">Gouvernement</a>
+          <a href="affilies.html" data-fr="Affiliés" data-en="Affiliates">Affiliés</a>
+          <a href="mailto:info@parcoursca.ca" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-fr="Légal" data-en="Legal">Légal</h5>
+          <a href="#" data-fr="Politique de confidentialité" data-en="Privacy Policy">Politique de confidentialité</a>
+          <a href="#" data-fr="Conditions d'utilisation" data-en="Terms of Service">Conditions d'utilisation</a>
+          <a href="#" data-fr="Conformité LPRPDE" data-en="PIPEDA Compliance">Conformité LPRPDE</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-fr="© 2026 ParcoursCA. Tous droits réservés. Fait au Canada." data-en="© 2026 ParcoursCA. All rights reserved. Made in Canada.">© 2026 ParcoursCA. Tous droits réservés. Fait au Canada.</p>
+      <div class="footer-trust">
+        <span class="trust-badge"><i data-lucide="shield"></i> AES-256</span>
+        <span class="trust-badge"><i data-lucide="scale"></i> LPRPDE</span>
+        <span class="trust-badge"><i data-lucide="smartphone"></i> <span data-fr="Données locales" data-en="Local data">Données locales</span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   AFFILIES PAGE — Inline Script
+   FAQ accordion · Form validation
+═══════════════════════════════════════════════════════════ */
+;(function () {
+  'use strict'
+
+  /* ── FAQ ACCORDION ──────────────────────────────────────── */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var question = item.querySelector('.faq-question')
+    if (!question) return
+
+    question.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open')
+
+      // Close all other open items
+      document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+        if (openItem !== item) openItem.classList.remove('open')
+      })
+
+      // Toggle current
+      item.classList.toggle('open', !isOpen)
+    })
+  })
+
+  /* ── FORM VALIDATION ────────────────────────────────────── */
+  var form = document.getElementById('affiliateForm')
+  if (!form) return
+
+  function showError (id, show) {
+    var el = document.getElementById(id)
+    if (el) el.classList.toggle('visible', show)
+  }
+
+  function isValidEmail (email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
+  form.addEventListener('submit', function (e) {
+    var name      = document.getElementById('aff-name')
+    var email     = document.getElementById('aff-email')
+    var platform  = document.getElementById('aff-platform')
+    var audience  = document.getElementById('aff-audience')
+    var lang      = document.getElementById('aff-lang')
+
+    var valid = true
+
+    // Name
+    if (!name || !name.value.trim()) {
+      showError('err-name', true); valid = false
+    } else {
+      showError('err-name', false)
+    }
+
+    // Email
+    if (!email || !isValidEmail(email.value.trim())) {
+      showError('err-email', true); valid = false
+    } else {
+      showError('err-email', false)
+    }
+
+    // Platform URL
+    if (!platform || !platform.value.trim()) {
+      showError('err-platform', true); valid = false
+    } else {
+      showError('err-platform', false)
+    }
+
+    // Audience
+    if (!audience || !audience.value) {
+      showError('err-audience', true); valid = false
+    } else {
+      showError('err-audience', false)
+    }
+
+    // Language
+    if (!lang || !lang.value) {
+      showError('err-lang', true); valid = false
+    } else {
+      showError('err-lang', false)
+    }
+
+    if (!valid) {
+      e.preventDefault()
+      return
+    }
+
+    // Show success message (form still submits via mailto)
+    var successEl = document.getElementById('formSuccess')
+    if (successEl) {
+      setTimeout(function () {
+        successEl.classList.add('visible')
+        if (typeof lucide !== 'undefined') lucide.createIcons()
+      }, 300)
+    }
+  })
+
+  /* ── FADE-UP for new elements ───────────────────────────── */
+  var pageSelectors = [
+    '.benefit-card',
+    '.step-card',
+    '.faq-item',
+    '.commissions-note',
+    '.influencer-deal-box',
+    '.influencer-text',
+    '.affiliate-form',
+    '.affilies-stat',
+    '.affilies-badge',
+    '.hero-affilies h1',
+    '.hero-affilies-sub',
+    '.hero-affilies-stats',
+    '.hero-affilies-cta',
+  ]
+
+  pageSelectors.forEach(function (selector) {
+    document.querySelectorAll(selector).forEach(function (el) {
+      el.classList.add('fade-up')
+    })
+  })
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var siblings = Array.from(entry.target.parentElement.querySelectorAll('.fade-up'))
+          var idx = siblings.indexOf(entry.target)
+          setTimeout(function () {
+            entry.target.classList.add('visible')
+          }, idx * 80)
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
+
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      observer.observe(el)
+    })
+  } else {
+    document.querySelectorAll('.fade-up').forEach(function (el) {
+      el.classList.add('visible')
+    })
+  }
+
+})()
+</script>
+</body>
+</html>
