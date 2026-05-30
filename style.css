@@ -291,7 +291,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 ═══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 92vh;
   display: flex;
   align-items: center;
   padding-top: 68px;
@@ -314,7 +313,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   max-width: var(--container);
   margin: 0 auto;
-  padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 48px) clamp(40px, 5vw, 72px);
+  padding: clamp(56px, 6vw, 88px) clamp(20px, 4vw, 48px) clamp(56px, 6vw, 88px);
   width: 100%;
 }
 /* Two-column split */
