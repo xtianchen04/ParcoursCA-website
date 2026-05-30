@@ -566,7 +566,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .phone-mockup {
   position: relative;
   z-index: 1;
-  width: 240px;
+  width: 300px;
   background: #0A1525;
   border-radius: 36px;
   border: 2px solid rgba(201,168,76,0.22);
