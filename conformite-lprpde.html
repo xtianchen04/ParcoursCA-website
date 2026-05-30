@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conformité LPRPDE — ParcoursCA</title>
+  <link rel="icon" href="/icon-512.png" type="image/png" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .legal-page { padding: 120px 0 80px; background: var(--navy); min-height: 100vh; }
+    .legal-container { max-width: 760px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .legal-back { display: inline-flex; align-items: center; gap: 8px; font-family: 'Sora', sans-serif; font-size: 0.82rem; color: var(--muted); margin-bottom: 48px; text-decoration: none; transition: color 0.18s; }
+    .legal-back:hover { color: var(--gold); }
+    .legal-label { display: inline-block; font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); background: var(--gold-pale); border: 1px solid var(--gold-border); border-radius: 50px; padding: 6px 16px; margin-bottom: 24px; }
+    .legal-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+    .legal-date { font-family: 'Sora', sans-serif; font-size: 0.8rem; color: var(--muted); margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .legal-section { margin-bottom: 48px; }
+    .legal-section h2 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--gold-light); margin-bottom: 16px; }
+    .legal-section p, .legal-section li { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+    .legal-section ul { padding-left: 20px; }
+    .legal-section li { margin-bottom: 8px; }
+    .legal-highlight { background: var(--navy-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .legal-highlight p { margin: 0; color: var(--off-white); font-size: 0.88rem; }
+    .compliance-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gold-pale); border: 1px solid var(--gold-border); border-radius: 10px; padding: 14px 20px; margin: 8px 8px 8px 0; font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--gold-light); }
+    .compliance-badges { display: flex; flex-wrap: wrap; margin: 24px 0; }
+    .principle-card { background: var(--navy-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 16px; }
+    .principle-card h3 { font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--off-white); margin-bottom: 8px; }
+    .principle-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; margin: 0; }
+  </style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-container">
+    <a class="nav-logo" href="/">
+      <img src="/icon-512.png" style="width:22px;height:22px;border-radius:4px;object-fit:cover;" alt="ParcoursCA" />
+      <span>PARCOURS<span class="logo-ca">CA</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#mission">Mission</a>
+      <a href="/#features">L'application</a>
+      <a href="/#tarifs">Tarifs</a>
+    </div>
+    <a href="https://app.parcoursca.ca" class="btn-primary nav-cta">Ouvrir l'app →</a>
+  </div>
+</nav>
+
+<main class="legal-page">
+  <div class="legal-container">
+    <a class="legal-back" href="/">← Retour</a>
+    <div class="legal-label">Conformité &amp; Sécurité</div>
+    <h1 class="legal-title">Conformité LPRPDE</h1>
+    <p class="legal-date">Loi sur la protection des renseignements personnels et les documents électroniques · Mise à jour : 30 mai 2026</p>
+
+    <div class="legal-highlight">
+      <p>ParcoursCA est entièrement conforme à la <strong style="color:var(--gold)">LPRPDE</strong> (loi fédérale canadienne), à la <strong style="color:var(--gold)">Loi 25</strong> du Québec, et aux normes <strong style="color:var(--gold)">WCAG 2.1</strong> d'accessibilité numérique. La protection de vos données n'est pas une option — c'est une architecture.</p>
+    </div>
+
+    <div class="compliance-badges">
+      <div class="compliance-badge">✓ LPRPDE — Loi fédérale</div>
+      <div class="compliance-badge">✓ Loi 25 — Québec</div>
+      <div class="compliance-badge">✓ AES-256-GCM</div>
+      <div class="compliance-badge">✓ WCAG 2.1</div>
+      <div class="compliance-badge">✓ Données hébergées au Canada</div>
+    </div>
+
+    <div class="legal-section">
+      <h2>Qu'est-ce que la LPRPDE ?</h2>
+      <p>La Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) est la principale loi fédérale canadienne régissant la façon dont les organisations du secteur privé collectent, utilisent et divulguent les renseignements personnels.</p>
+      <p>Elle s'appuie sur 10 principes équitables relatifs à l'information, auxquels ParcoursCA adhère pleinement.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Nos 10 engagements LPRPDE</h2>
+
+      <div class="principle-card">
+        <h3>1. Responsabilité</h3>
+        <p>ParcoursCA Inc. est responsable des renseignements personnels sous sa garde. Un responsable de la protection des données (RPD) a été désigné et peut être joint à : confidentialite@parcoursca.ca</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>2. Identification des finalités</h3>
+        <p>Nous identifions les finalités de la collecte de renseignements avant ou au moment de la collecte. Chaque information collectée correspond à un service précis que vous avez choisi d'utiliser.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>3. Consentement</h3>
+        <p>Nous obtenons votre consentement éclairé avant de collecter, d'utiliser ou de communiquer vos renseignements personnels. Vous pouvez retirer votre consentement à tout moment.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>4. Limitation de la collecte</h3>
+        <p>Nous collectons uniquement les renseignements nécessaires aux finalités identifiées — ni plus, ni moins. Nous ne pratiquons pas la collecte préventive de données.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>5. Limitation de l'utilisation, de la communication et de la conservation</h3>
+        <p>Vos données ne sont utilisées qu'aux fins pour lesquelles elles ont été collectées. Nous appliquons une politique de rétention minimale et supprimons les données devenues inutiles.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>6. Exactitude</h3>
+        <p>Nous maintenons vos renseignements à jour et exacts. Vous pouvez corriger vos informations à tout moment depuis votre profil ou en nous contactant.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>7. Mesures de sécurité</h3>
+        <p>Chiffrement AES-256-GCM des données sensibles, TLS 1.3 pour les transmissions, authentification multi-facteurs disponible, et audits de sécurité réguliers. Les données sont hébergées exclusivement au Canada.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>8. Transparence</h3>
+        <p>Nos politiques de gestion des renseignements personnels sont disponibles publiquement. Nous informons les utilisateurs de toute modification de nos pratiques de confidentialité.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>9. Accès aux renseignements personnels</h3>
+        <p>Sur demande, nous vous communiquons l'existence, l'utilisation et la communication de vos renseignements personnels, et nous vous donnons accès à ces renseignements dans un délai de 30 jours.</p>
+      </div>
+
+      <div class="principle-card">
+        <h3>10. Possibilité de porter plainte</h3>
+        <p>Vous pouvez nous adresser un défi concernant le respect des principes ci-dessus. Si votre préoccupation n'est pas résolue, vous pouvez déposer une plainte auprès du Commissariat à la protection de la vie privée du Canada (www.priv.gc.ca).</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>Loi 25 — Québec</h2>
+      <p>En complément de la LPRPDE, ParcoursCA se conforme aux exigences de la Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25) du Québec, notamment :</p>
+      <ul>
+        <li>Évaluation des facteurs relatifs à la vie privée (ÉFVP) pour les nouveaux projets</li>
+        <li>Notification obligatoire en cas d'incident de confidentialité</li>
+        <li>Droit à la portabilité des données</li>
+        <li>Droit à la désindexation et à l'oubli</li>
+        <li>Consentement spécifique à l'utilisation des données à des fins de profilage</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>Signaler un incident</h2>
+      <p>En cas de incident de sécurité ou de violation de données, nous nous engageons à vous notifier dans les 72 heures, conformément à nos obligations légales, et à prendre les mesures correctives appropriées immédiatement.</p>
+      <p>Pour signaler un incident ou une vulnérabilité : <strong style="color:var(--off-white)">securite@parcoursca.ca</strong></p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contact</h2>
+      <p>Responsable de la protection des données :<br>
+      <strong style="color:var(--off-white)">ParcoursCA Inc.</strong><br>
+      Courriel : confidentialite@parcoursca.ca<br>
+      Commissariat à la protection de la vie privée du Canada : <a href="https://www.priv.gc.ca" style="color:var(--gold)" target="_blank" rel="noopener">www.priv.gc.ca</a></p>
+    </div>
+  </div>
+</main>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

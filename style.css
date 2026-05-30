@@ -1457,11 +1457,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
+  margin-top: 56px;
 }
 .govt-points {
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 48px;
 }
 .govt-point {
   display: flex;
@@ -1661,7 +1662,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
+  margin-top: 56px;
 }
 .testimonial-card {
   padding: 44px 36px;
