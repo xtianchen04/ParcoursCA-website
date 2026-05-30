@@ -127,80 +127,86 @@
 
             <!-- App header -->
             <div class="ph-nav">
-              <div style="display:flex;align-items:center;gap:6px;">
-                <img src="/icon-512.png" alt="ParcoursCA" style="width:18px;height:18px;border-radius:4px;object-fit:cover;" />
+              <div style="display:flex;align-items:center;gap:5px;">
+                <img src="/icon-512.png" alt="ParcoursCA" style="width:16px;height:16px;border-radius:3px;object-fit:cover;" />
                 <span class="ph-logo">Parcours<span>CA</span></span>
               </div>
               <div class="ph-nav-icons">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <div class="ph-avatar">C</div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
               </div>
+            </div>
+
+            <!-- Info banner -->
+            <div class="ph-info-banner">
+              <span class="ph-info-tag">INFO</span>
+              <span data-fr="📋 Ne pas oublier de produire votre déclaration 2025 !" data-en="📋 Don't forget to file your 2025 tax return!">📋 Ne pas oublier votre déclaration 2025 !</span>
             </div>
 
             <!-- Greeting -->
             <div class="ph-greeting">
-              <div class="ph-greeting-name" data-fr="Bonjour, Marie 👋" data-en="Hello, Marie 👋">Bonjour, Marie 👋</div>
-              <div class="ph-greeting-sub" data-fr="Ontario (ON) · Immigrant · Résident permanent" data-en="Ontario (ON) · Immigrant · Permanent Resident">Ontario (ON) · Immigrant · Résident permanent</div>
+              <div class="ph-greeting-name" data-fr="Bon retour, Christian 👋" data-en="Welcome back, Christian 👋">Bon retour, Christian 👋</div>
+              <div class="ph-greeting-sub" data-fr="samedi 30 mai · Ontario (ON)" data-en="Saturday May 30 · Ontario (ON)">samedi 30 mai · Ontario (ON)</div>
             </div>
 
-            <!-- Streak + XP card -->
+            <!-- Streak card -->
             <div class="ph-streak-card">
               <div class="ph-streak-left">
-                <div class="ph-streak-icon">🔥</div>
+                <div class="ph-streak-icon-wrap">🔥</div>
                 <div>
+                  <div class="ph-streak-small" data-fr="Jours de série" data-en="Streak days">Jours de série</div>
                   <div class="ph-streak-val">7 <span data-fr="jours" data-en="days">jours</span></div>
-                  <div class="ph-streak-label" data-fr="Série active" data-en="Active streak">Série active</div>
                 </div>
               </div>
-              <div class="ph-xp-block">
-                <div class="ph-xp-label">XP <span style="color:#C9A84C;font-weight:700;">340</span></div>
-                <div class="ph-xp-bar"><div class="ph-xp-fill" style="width:68%"></div></div>
-                <div class="ph-xp-level" data-fr="Niveau Explorateur" data-en="Explorer Level">Niveau Explorateur</div>
+              <div style="text-align:right;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                <div style="font-size:0.42rem;color:rgba(255,255,255,0.35);" data-fr="Meilleur: 7" data-en="Best: 7">Meilleur: 7</div>
+              </div>
+              <div class="ph-xp-bar" style="position:absolute;bottom:0;left:0;right:0;border-radius:0 0 9px 9px;height:2px;"><div class="ph-xp-fill" style="width:70%"></div></div>
+            </div>
+
+            <!-- Community level card -->
+            <div class="ph-community-card">
+              <div class="ph-community-top">
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="ph-comm-icon">🌱</div>
+                  <div>
+                    <div class="ph-comm-label" data-fr="NIVEAU COMMUNAUTÉ" data-en="COMMUNITY LEVEL">NIVEAU COMMUNAUTÉ</div>
+                    <div class="ph-comm-name" data-fr="Débutant" data-en="Beginner">Débutant</div>
+                  </div>
+                </div>
+                <div class="ph-xp-badge">☆ 0 XP</div>
+              </div>
+              <div class="ph-xp-bar" style="margin:6px 0 2px;height:3px;"><div class="ph-xp-fill" style="width:4%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.42rem;color:rgba(255,255,255,0.3);margin-bottom:7px;"><span>0 XP</span><span>100 XP</span></div>
+              <div class="ph-comm-stats">
+                <div class="ph-comm-stat"><span>🔥</span><strong>1</strong><small data-fr="Série" data-en="Streak">Série</small></div>
+                <div class="ph-comm-stat"><span>🛡</span><strong>0</strong><small data-fr="Badges" data-en="Badges">Badges</small></div>
+                <div class="ph-comm-stat"><span>🎁</span><strong>0</strong><small data-fr="Referrals" data-en="Referrals">Referrals</small></div>
               </div>
             </div>
 
-            <!-- Priority alert -->
+            <!-- Priorities -->
+            <div class="ph-priorities-header">
+              <span data-fr="Vos priorités" data-en="Your priorities">Vos priorités</span>
+              <span class="ph-urgent-badge" data-fr="1 Urgent" data-en="1 Urgent">1 Urgent</span>
+            </div>
             <div class="ph-priority-card">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#E2C47A" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              <span data-fr="T1 à produire — délai 30 avril 2026" data-en="T1 to file — deadline April 30 2026">T1 à produire — délai 30 avril 2026</span>
-            </div>
-
-            <!-- Quick actions 2x2 -->
-            <div class="ph-grid">
-              <div class="ph-card">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                <div class="ph-card-title" data-fr="Documents" data-en="Documents">Documents</div>
-                <div class="ph-card-sub" data-fr="PR · Passeport" data-en="PR · Passport">PR · Passeport</div>
-              </div>
-              <div class="ph-card">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                <div class="ph-card-title" data-fr="Fiscal" data-en="Fiscal">Fiscal</div>
-                <div class="ph-card-sub">T1, REER, CELI</div>
-              </div>
-              <div class="ph-card">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                <div class="ph-card-title" data-fr="Services" data-en="Services">Services</div>
-                <div class="ph-card-sub" data-fr="RAMQ · Logement" data-en="RAMQ · Housing">RAMQ · Logement</div>
-              </div>
-              <div class="ph-card">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                <div class="ph-card-title" data-fr="Boussole" data-en="Compass">Boussole</div>
-                <div class="ph-card-sub" data-fr="Citoyenneté" data-en="Citizenship">Citoyenneté</div>
+              <div class="ph-priority-icon">💬</div>
+              <div style="flex:1;">
+                <div class="ph-priority-tag">URGENT</div>
+                <div class="ph-priority-text" data-fr="Prestation épicerie — Paiement 5 juin (jusqu'à 533 $)" data-en="Grocery Benefit — Payment June 5 (up to $533)">Prestation épicerie — 5 juin (jusqu'à 533 $)</div>
               </div>
             </div>
 
-            <!-- Partner promo -->
-            <div class="ph-partner">
-              <div class="ph-partner-left">
-                <div class="ph-partner-icon">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                </div>
-                <div>
-                  <div class="ph-partner-badge" data-fr="★ Platine" data-en="★ Platinum">★ Platine</div>
-                  <div class="ph-partner-name">Manheim Tax &amp; Accounting</div>
-                </div>
-              </div>
-              <div class="ph-partner-btn" data-fr="Voir →" data-en="View →">Voir →</div>
+            <!-- Bottom nav -->
+            <div class="ph-bottom-nav">
+              <div class="ph-nav-tab active"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span data-fr="Accueil" data-en="Home">Accueil</span></div>
+              <div class="ph-nav-tab"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg><span>Docs</span></div>
+              <div class="ph-nav-tab"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Tax</span></div>
+              <div class="ph-nav-tab"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Services</span></div>
+              <div class="ph-nav-tab" style="position:relative;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg><div class="ph-notif-dot">9+</div><span data-fr="Alertes" data-en="Alerts">Alertes</span></div>
             </div>
 
           </div>
