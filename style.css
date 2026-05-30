@@ -568,6 +568,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   z-index: 1;
   width: 290px;
+  min-height: 628px;
   background: #09121f;
   border-radius: 48px;
   /* Titanium-style frame */
