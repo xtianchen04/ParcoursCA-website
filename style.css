@@ -563,12 +563,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   pointer-events: none;
   z-index: 0;
 }
-/* iPhone Pro Max proportions — 393×852pt scaled to 290px wide */
+/* iPhone 15 standard — 393×852pt scaled to 262px wide */
 .phone-mockup {
   position: relative;
   z-index: 1;
-  width: 290px;
-  min-height: 628px;
+  width: 262px;
+  min-height: 568px;
   background: #09121f;
   border-radius: 48px;
   /* Titanium-style frame */
@@ -661,6 +661,75 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .ph-hero-sub {
   font-size: 0.6rem;
   color: rgba(255,255,255,0.4);
+}
+
+/* Greeting */
+.ph-greeting { margin-bottom: 2px; }
+.ph-greeting-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+.ph-greeting-sub {
+  font-size: 0.52rem;
+  color: rgba(255,255,255,0.38);
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+/* Streak + XP card */
+.ph-streak-card {
+  background: linear-gradient(135deg, rgba(220,80,30,0.18), rgba(201,168,76,0.10));
+  border: 1px solid rgba(220,80,30,0.22);
+  border-radius: 10px;
+  padding: 9px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ph-streak-left { display: flex; align-items: center; gap: 7px; }
+.ph-streak-icon { font-size: 1.1rem; line-height: 1; }
+.ph-streak-val {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.ph-streak-val span { font-size: 0.6rem; font-weight: 400; color: rgba(255,255,255,0.45); }
+.ph-streak-label { font-size: 0.5rem; color: rgba(255,255,255,0.4); margin-top: 1px; }
+.ph-xp-block { flex: 1; text-align: right; }
+.ph-xp-label { font-size: 0.52rem; color: rgba(255,255,255,0.45); margin-bottom: 3px; }
+.ph-xp-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.ph-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+  border-radius: 2px;
+}
+.ph-xp-level { font-size: 0.48rem; color: var(--gold); }
+
+/* Priority alert */
+.ph-priority-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(226,196,122,0.08);
+  border: 1px solid rgba(226,196,122,0.2);
+  border-left: 3px solid var(--gold);
+  border-radius: 7px;
+  padding: 6px 9px;
+  font-size: 0.52rem;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Sora', sans-serif;
 }
 
 /* Feature grid */
