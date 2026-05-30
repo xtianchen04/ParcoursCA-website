@@ -321,7 +321,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 .hero-left {
   display: flex;
@@ -332,7 +332,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .hero-right {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 72px;
 }
 /* Badge */
 .hero-badge {
@@ -575,7 +576,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   z-index: 1;
   width: 262px;
-  min-height: 480px;
   background: #09121f;
   border-radius: 48px;
   /* Titanium-style frame */
@@ -605,16 +605,6 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-/* Home indicator bar */
-.phone-screen::after {
-  content: '';
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 2px;
-  margin: 6px auto 0;
 }
 
 /* Status */
