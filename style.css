@@ -558,38 +558,55 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(201,168,76,0.14) 0%, transparent 70%);
+  width: 360px; height: 500px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.13) 0%, transparent 68%);
   pointer-events: none;
   z-index: 0;
 }
+/* iPhone Pro Max proportions — 393×852pt scaled to 290px wide */
 .phone-mockup {
   position: relative;
   z-index: 1;
-  width: 300px;
-  background: #0A1525;
-  border-radius: 36px;
-  border: 2px solid rgba(201,168,76,0.22);
+  width: 290px;
+  background: #09121f;
+  border-radius: 48px;
+  /* Titanium-style frame */
+  border: 3px solid transparent;
+  background-clip: padding-box;
   box-shadow:
-    0 40px 80px rgba(0,0,0,0.65),
-    0 0 0 6px rgba(255,255,255,0.03),
-    inset 0 1px 0 rgba(255,255,255,0.06);
+    0 0 0 3px rgba(180,160,110,0.35),
+    0 0 0 4px rgba(255,255,255,0.06),
+    0 48px 96px rgba(0,0,0,0.72),
+    0 16px 40px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.08);
   overflow: hidden;
 }
+/* Dynamic Island (pill cutout) */
 .phone-notch {
   position: absolute;
-  top: 0; left: 50%;
+  top: 12px; left: 50%;
   transform: translateX(-50%);
-  width: 80px; height: 22px;
-  background: #0A1525;
-  border-radius: 0 0 14px 14px;
+  width: 96px; height: 28px;
+  background: #000;
+  border-radius: 20px;
   z-index: 10;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
 }
 .phone-screen {
-  padding: 30px 14px 18px;
+  padding: 52px 16px 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
+}
+/* Home indicator bar */
+.phone-screen::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: rgba(255,255,255,0.22);
+  border-radius: 2px;
+  margin: 6px auto 0;
 }
 
 /* Status */
