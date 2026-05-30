@@ -291,7 +291,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 ═══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   padding-top: 68px;
@@ -314,7 +314,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   max-width: var(--container);
   margin: 0 auto;
-  padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 48px) clamp(60px, 8vw, 100px);
+  padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 48px) clamp(40px, 5vw, 72px);
   width: 100%;
 }
 /* Two-column split */
@@ -538,11 +538,22 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.5;
 }
 
+/* Floating animation */
+@keyframes phoneFloat {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-10px) rotate(0.4deg); }
+  50%  { transform: translateY(-16px) rotate(0deg); }
+  75%  { transform: translateY(-8px) rotate(-0.4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
 /* Phone mockup */
 .phone-mockup-wrap {
   position: relative;
   display: flex;
   justify-content: center;
+  animation: phoneFloat 5s ease-in-out infinite;
+  will-change: transform;
 }
 .phone-glow {
   position: absolute;
