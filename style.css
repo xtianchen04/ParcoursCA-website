@@ -553,6 +553,13 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   justify-content: center;
   animation: phoneFloat 5s ease-in-out infinite;
   will-change: transform;
+  /* Trapezoid effect: slightly wider at the bottom — distinguishes from iPhone */
+  perspective: 900px;
+}
+.phone-mockup-wrap > .phone-mockup {
+  transform: rotateX(4deg);
+  transform-origin: top center;
+  transform-style: preserve-3d;
 }
 .phone-glow {
   position: absolute;
