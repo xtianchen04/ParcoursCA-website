@@ -1244,7 +1244,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 auto 48px;
+  margin: 44px auto 56px;
   background: var(--navy-card);
   border: 1px solid var(--border);
   border-radius: 50px;
