@@ -2,6 +2,9 @@
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/affilies", "destination": "/affilies.html" },
-    { "source": "/predepart", "destination": "/predepart.html" }
+    { "source": "/predepart", "destination": "/predepart.html" },
+    { "source": "/politique-confidentialite", "destination": "/politique-confidentialite.html" },
+    { "source": "/conditions-utilisation", "destination": "/conditions-utilisation.html" },
+    { "source": "/conformite-lprpde", "destination": "/conformite-lprpde.html" }
   ]
 }
