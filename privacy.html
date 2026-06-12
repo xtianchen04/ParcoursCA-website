@@ -6,6 +6,7 @@
   <title>Politique de confidentialité — ParcoursCA</title>
   <link rel="icon" type="image/png" href="/icon-512.png" />
   <link rel="apple-touch-icon" href="/icon-512.png" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -27,7 +28,12 @@
       gap: 10px;
       text-decoration: none;
     }
-    header .logo svg { width: 36px; height: 40px; }
+    header .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
     header .logo span {
       font-size: 22px;
       font-weight: 700;
@@ -72,15 +78,8 @@
       margin: 20px 0 8px;
     }
     p { margin-bottom: 12px; color: #cbd5e1; font-size: 15px; }
-    ul, ol {
-      padding-left: 24px;
-      margin-bottom: 12px;
-    }
-    li {
-      color: #cbd5e1;
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
+    ul, ol { padding-left: 24px; margin-bottom: 12px; }
+    li { color: #cbd5e1; font-size: 15px; margin-bottom: 6px; }
     a { color: #C9A84C; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .card {
@@ -98,6 +97,21 @@
       margin: 16px 0;
       color: #e2c97e;
       font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .highlight-danger {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: #fca5a5;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
     }
     table {
       width: 100%;
@@ -120,6 +134,71 @@
       vertical-align: top;
     }
     tr:last-child td { border-bottom: none; }
+
+    /* Rights list */
+    .rights-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .rights-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+    .icon-wrap {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .icon-wrap.blue   { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .icon-wrap.gold   { background: rgba(201,168,76,0.15); color: #C9A84C; }
+    .icon-wrap.red    { background: rgba(239,68,68,0.12);  color: #f87171; }
+    .icon-wrap.teal   { background: rgba(20,184,166,0.12); color: #2dd4bf; }
+    .icon-wrap.purple { background: rgba(168,85,247,0.12); color: #c084fc; }
+    .icon-wrap.slate  { background: rgba(148,163,184,0.1); color: #94a3b8; }
+    .rights-list li > div.content { flex: 1; }
+    .rights-list .label {
+      font-weight: 600;
+      color: #f1f5f9;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+    .rights-list .desc {
+      color: #94a3b8;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    /* Contact row */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 6px 0;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+    .contact-row a { color: #C9A84C; }
+
+    /* Lucide icon sizing */
+    .lucide { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .icon-sm  { width: 15px; height: 15px; }
+    .icon-md  { width: 18px; height: 18px; }
+    .icon-lg  { width: 20px; height: 20px; }
+
     footer {
       text-align: center;
       color: #475569;
@@ -133,11 +212,8 @@
 <body>
 
 <header>
-  <a class="logo" href="https://app.parcoursca.ca">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 44" fill="none">
-      <path d="M20 3L23.5 11.5H33L29 17.5L37 20L27.5 29L30 39L20 32.5L10 39L12.5 29L3 20L11 17.5L7 11.5H16.5Z" fill="#C9A84C"/>
-      <rect x="18.5" y="38" width="3" height="5" rx="1" fill="#C9A84C" opacity="0.6"/>
-    </svg>
+  <a class="logo" href="https://parcoursca.ca">
+    <img src="/icon-512.png" alt="ParcoursCA" />
     <span>ParcoursCA</span>
   </a>
   <p>La référence de confiance pour tous les Canadiens</p>
@@ -146,18 +222,21 @@
 <div class="container">
   <h1>Politique de confidentialité</h1>
   <p class="meta">
-    Dernière mise à jour : 28 mai 2026 &nbsp;·&nbsp;
+    Dernière mise à jour : 12 juin 2026 &nbsp;·&nbsp;
     Applicable à : app.parcoursca.ca · Application Android · Application iOS
   </p>
 
   <div class="highlight">
-    📋 Cette politique est conforme à la <strong>LPRPDE</strong> (Loi sur la protection des renseignements personnels et les documents électroniques), à la <strong>Loi 25 du Québec</strong>, et aux exigences de <strong>Google Play</strong> et <strong>Apple App Store</strong>.
+    <i data-lucide="shield-check" class="icon-lg" style="color:#C9A84C;margin-top:2px;flex-shrink:0;"></i>
+    <div>
+      Cette politique est conforme à la <strong>LPRPDE</strong> (Loi sur la protection des renseignements personnels et les documents électroniques), à la <strong>Loi 25 du Québec</strong>, et aux exigences de <strong>Google Play</strong> et <strong>Apple App Store</strong>.
+    </div>
   </div>
 
   <!-- 1 -->
   <h2>1. Qui sommes-nous</h2>
   <p>
-    <strong>ParcoursCA</strong> (ci-après « ParcoursCA », « nous », « notre ») est une entreprise canadienne qui exploite la plateforme ParcoursCA — une application web et mobile d'assistance institutionnelle multilingue à destination des peuples autochtones, des citoyens canadiens et des nouveaux arrivants.
+    <strong>ParcoursCA</strong> est une plateforme canadienne d'assistance institutionnelle multilingue, développée et exploitée par <strong>Fjord Tech Finance</strong>, entreprise basée au Québec, Canada, faisant affaire sous le nom commercial <strong>ParcoursCA</strong>. Elle s'adresse aux peuples autochtones, aux citoyens canadiens et aux nouveaux arrivants.
   </p>
   <div class="card">
     <strong>Responsable de la protection des données :</strong><br/>
@@ -191,10 +270,9 @@
     </thead>
     <tbody>
       <tr><td>Conversations avec l'agent IA</td><td>Fournir les réponses et améliorer le service</td></tr>
-      <tr><td>Documents téléversés</td><td>Rappels d'expiration, organisation personnelle</td></tr>
       <tr><td>Données d'utilisation anonymisées</td><td>Amélioration de la plateforme</td></tr>
-      <tr><td>Jetons de notifications push</td><td>Envoyer des alertes IRCC, fiscales</td></tr>
-      <tr><td>Photos de profil (optionnel)</td><td>Identification visuelle dans le profil</td></tr>
+      <tr><td>Jetons de notifications push</td><td>Envoyer des alertes gouvernementales et fiscales</td></tr>
+      <tr><td>Photo de profil (optionnel)</td><td>Identification visuelle dans le profil</td></tr>
     </tbody>
   </table>
 
@@ -217,8 +295,11 @@
     <li>Améliorer nos services à partir de données agrégées et anonymisées</li>
   </ul>
 
-  <div class="highlight">
-    🚫 Nous ne vendons jamais vos données personnelles à des tiers. Nous n'utilisons pas vos conversations IA à des fins publicitaires.
+  <div class="highlight-danger">
+    <i data-lucide="ban" class="icon-lg" style="color:#f87171;margin-top:2px;flex-shrink:0;"></i>
+    <div>
+      Nous ne vendons <strong>jamais</strong> vos données personnelles à des tiers. Nous n'utilisons pas vos conversations IA à des fins publicitaires.
+    </div>
   </div>
 
   <!-- 4 -->
@@ -231,7 +312,7 @@
       <tr>
         <td><strong>Supabase</strong></td>
         <td>Base de données et authentification</td>
-        <td>Profil, documents, préférences</td>
+        <td>Profil, préférences</td>
         <td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></td>
       </tr>
       <tr>
@@ -253,10 +334,10 @@
         <td><a href="https://vercel.com/legal/privacy-policy" target="_blank">vercel.com/legal</a></td>
       </tr>
       <tr>
-        <td><strong>Google (Firebase)</strong></td>
-        <td>Notifications push Android</td>
+        <td><strong>OneSignal</strong></td>
+        <td>Notifications push (iOS &amp; Android)</td>
         <td>Jeton de notification anonyme</td>
-        <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td>
+        <td><a href="https://onesignal.com/privacy_policy" target="_blank">onesignal.com/privacy</a></td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +351,6 @@
     <tbody>
       <tr><td>Profil utilisateur actif</td><td>Durée du compte</td></tr>
       <tr><td>Conversations IA</td><td>90 jours après la session</td></tr>
-      <tr><td>Documents téléversés</td><td>Jusqu'à suppression par l'utilisateur</td></tr>
       <tr><td>Données de facturation</td><td>7 ans (obligation fiscale canadienne)</td></tr>
       <tr><td>Journaux de sécurité</td><td>90 jours</td></tr>
       <tr><td>Compte supprimé</td><td>Suppression complète dans les 30 jours</td></tr>
@@ -280,14 +360,52 @@
   <!-- 6 -->
   <h2>6. Vos droits (LPRPDE &amp; Loi 25 Québec)</h2>
   <p>Vous disposez des droits suivants concernant vos données personnelles :</p>
-  <ul>
-    <li>🔍 <strong>Accès</strong> — Obtenir une copie de vos données</li>
-    <li>✏️ <strong>Rectification</strong> — Corriger des informations inexactes</li>
-    <li>🗑️ <strong>Suppression</strong> — Demander l'effacement de votre compte et données</li>
-    <li>📦 <strong>Portabilité</strong> — Recevoir vos données dans un format structuré</li>
-    <li>🚫 <strong>Opposition</strong> — Vous opposer à certains traitements</li>
-    <li>🔕 <strong>Retrait du consentement</strong> — À tout moment, sans effet rétroactif</li>
+
+  <ul class="rights-list">
+    <li>
+      <div class="icon-wrap blue"><i data-lucide="search" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Accès</div>
+        <p class="desc">Obtenir une copie de vos données personnelles détenues par ParcoursCA</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon-wrap gold"><i data-lucide="pencil" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Rectification</div>
+        <p class="desc">Corriger des informations inexactes ou incomplètes vous concernant</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon-wrap red"><i data-lucide="trash-2" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Suppression</div>
+        <p class="desc">Demander l'effacement de votre compte et de toutes vos données</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon-wrap teal"><i data-lucide="package" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Portabilité</div>
+        <p class="desc">Recevoir vos données dans un format structuré, lisible par machine</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon-wrap purple"><i data-lucide="shield-off" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Opposition</div>
+        <p class="desc">Vous opposer à certains traitements de vos données personnelles</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon-wrap slate"><i data-lucide="bell-off" class="icon-md"></i></div>
+      <div class="content">
+        <div class="label">Retrait du consentement</div>
+        <p class="desc">À tout moment, sans effet rétroactif sur les traitements déjà effectués</p>
+      </div>
+    </li>
   </ul>
+
   <p>Pour exercer ces droits : <a href="mailto:support@parcoursca.ca">support@parcoursca.ca</a> — Réponse dans les 30 jours.</p>
 
   <!-- 7 -->
@@ -295,16 +413,16 @@
   <ul>
     <li>Chiffrement TLS 1.3 pour toutes les communications</li>
     <li>Données au repos chiffrées (AES-256) via Supabase</li>
+    <li>Base de données hébergée exclusivement au Canada (AWS ca-central-1)</li>
     <li>Authentification à deux facteurs disponible</li>
     <li>Accès aux données limité au personnel autorisé</li>
-    <li>Aucune donnée sensible stockée localement sur l'appareil</li>
     <li>Révision de sécurité régulière</li>
   </ul>
 
   <!-- 8 -->
   <h2>8. Notifications push</h2>
   <p>
-    L'application peut envoyer des notifications pour vous alerter des délais IRCC, des échéances fiscales, ou des mises à jour importantes. Ces notifications nécessitent votre consentement explicite. Vous pouvez les désactiver à tout moment dans les paramètres de votre appareil ou de l'application.
+    L'application peut envoyer des notifications pour vous alerter des délais gouvernementaux, des échéances fiscales, ou des mises à jour importantes. Ces notifications nécessitent votre consentement explicite. Vous pouvez les désactiver à tout moment dans les paramètres de votre appareil ou de l'application.
   </p>
 
   <!-- 9 -->
@@ -316,7 +434,7 @@
   <!-- 10 -->
   <h2>10. Transferts internationaux</h2>
   <p>
-    Certains de nos partenaires (Anthropic, Stripe) sont basés aux États-Unis. Ces transferts sont encadrés par des clauses contractuelles types assurant un niveau de protection équivalent à la législation canadienne (LPRPDE). Vos données ne sont jamais transférées à des pays sans cadre de protection adéquat.
+    Certains de nos partenaires (Anthropic, Stripe, OneSignal) sont basés aux États-Unis. Ces transferts sont encadrés par des clauses contractuelles types assurant un niveau de protection équivalent à la législation canadienne (LPRPDE). Vos données ne sont jamais transférées à des pays sans cadre de protection adéquat.
   </p>
 
   <!-- 11 -->
@@ -337,7 +455,7 @@
     <strong>Comment supprimer votre compte ParcoursCA</strong><br/><br/>
 
     <strong>Option 1 — Depuis l'application :</strong><br/>
-    Ouvrez ParcoursCA → <em>Profil</em> → <em>Paramètres</em> → <em>Supprimer mon compte</em>.
+    Ouvrez ParcoursCA → <em>Profil</em> → <em>Supprimer mon compte</em>.
     Votre compte et toutes vos données seront supprimés immédiatement et définitivement.<br/><br/>
 
     <strong>Option 2 — Par courriel :</strong><br/>
@@ -347,12 +465,11 @@
 
     <strong>Données supprimées :</strong><br/>
     Profil complet (nom, courriel, province, statut migratoire), historique des conversations avec l'assistant IA,
-    documents téléversés, contacts d'urgence SOS, et toutes les préférences.<br/><br/>
+    photo de profil, et toutes les préférences.<br/><br/>
 
     <strong>Données conservées :</strong><br/>
     Les journaux de transactions financières (abonnements Stripe) sont conservés 7 ans conformément aux
-    obligations fiscales canadiennes, puis définitivement supprimés. Ces données ne contiennent pas d'informations
-    personnelles identifiables au-delà du courriel de facturation.<br/><br/>
+    obligations fiscales canadiennes, puis définitivement supprimés.<br/><br/>
 
     <strong>Délai de suppression :</strong> Immédiat via l'application · 5 jours ouvrables via courriel ·
     Les copies de sauvegarde sont purgées dans les 90 jours suivants.
@@ -361,20 +478,29 @@
   <!-- 14 -->
   <h2>14. Contact et plaintes</h2>
   <div class="card">
-    <strong>ParcoursCA — Responsable de la protection des données</strong><br/>
+    <strong>Fjord Tech Finance (ParcoursCA) — Responsable de la protection des données</strong><br/><br/>
 
-    📧 <a href="mailto:support@parcoursca.ca">support@parcoursca.ca</a><br/>
-    🌐 <a href="https://parcoursca.ca">parcoursca.ca</a><br/><br/>
+    <div class="contact-row">
+      <i data-lucide="mail" class="icon-md" style="color:#C9A84C;"></i>
+      <a href="mailto:support@parcoursca.ca">support@parcoursca.ca</a>
+    </div>
+    <div class="contact-row">
+      <i data-lucide="globe" class="icon-md" style="color:#C9A84C;"></i>
+      <a href="https://parcoursca.ca">parcoursca.ca</a>
+    </div>
+    <br/>
     Si vous estimez que vos droits n'ont pas été respectés, vous pouvez également déposer une plainte auprès du <strong>Commissariat à la protection de la vie privée du Canada</strong> :<br/>
     <a href="https://www.priv.gc.ca" target="_blank">www.priv.gc.ca</a> · 1-800-282-1376
   </div>
 
   <footer>
-    © 2026 ParcoursCA — Tous droits réservés<br/>
+    © 2026 Fjord Tech Finance (ParcoursCA) — Tous droits réservés<br/>
     <a href="https://app.parcoursca.ca">app.parcoursca.ca</a> &nbsp;·&nbsp;
-    <a href="mailto:support@parcoursca.ca">support@parcoursca.ca</a>
+    <a href="mailto:support@parcoursca.ca">support@parcoursca.ca</a> &nbsp;·&nbsp;
+    <a href="https://parcoursca.ca/politique-confidentialite">Version complète</a>
   </footer>
 </div>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>
