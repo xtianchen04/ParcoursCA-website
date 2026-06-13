@@ -51,6 +51,12 @@
       }
     })
 
+    // Update href for language-specific links
+    document.querySelectorAll('[data-href-fr]').forEach(el => {
+      const href = el.getAttribute('data-href-' + lang)
+      if (href) el.setAttribute('href', href)
+    })
+
     // html lang attribute
     document.documentElement.lang = lang
 
