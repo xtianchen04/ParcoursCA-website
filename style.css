@@ -1590,6 +1590,22 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   border: 1px solid var(--gold-border);
 }
 .platine-icon i { width: 24px; height: 24px; color: var(--gold); }
+.partner-logo-icon img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.partner-logo-initial {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #7B5E0F, #C9A84C);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem; font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
 .partner-logo-info { flex: 1; }
 .partner-logo-name {
   font-family: 'Sora', sans-serif;

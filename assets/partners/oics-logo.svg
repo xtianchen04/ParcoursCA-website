@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="OICS — Organisme d'intervention communautaire spécialisée">
+  <defs>
+    <radialGradient id="oicsCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBB03B"/>
+      <stop offset="100%" stop-color="#F7931E"/>
+    </radialGradient>
+  </defs>
+  <!-- Cercle de personnes (pinwheel) -->
+  <g>
+    <g transform="rotate(0 100 100)" fill="#8CC63F"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(51.43 100 100)" fill="#F7B71E"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(102.86 100 100)" fill="#F15A5A"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(154.29 100 100)" fill="#ED4A7B"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(205.71 100 100)" fill="#C2268F"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(257.14 100 100)" fill="#2E8BC0"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+    <g transform="rotate(308.57 100 100)" fill="#29ABE2"><circle cx="100" cy="40" r="10.5"/><path d="M100 53 C116 62 118 84 103 96 C98 88 89 70 100 53 Z"/></g>
+  </g>
+  <!-- Centre orange tourbillon -->
+  <circle cx="100" cy="100" r="17" fill="url(#oicsCenter)"/>
+  <circle cx="100" cy="100" r="5.5" fill="#fff" opacity=".9"/>
+</svg>
