@@ -278,12 +278,13 @@
     yearly:  'price_prestige_yearly',
   }
 
-  let billing = 'monthly'
-
-  // Lire email depuis URL (?email=...)
   const params = new URLSearchParams(window.location.search)
   const emailParam = params.get('email') || params.get('e') || ''
   if (emailParam) document.getElementById('email').value = emailParam
+
+  // Pré-sélectionner le mode de facturation depuis l'URL
+  let billing = params.get('billing') === 'yearly' ? 'yearly' : 'monthly'
+  if (billing === 'yearly') setBilling('yearly')
 
   function setBilling(mode) {
     billing = mode

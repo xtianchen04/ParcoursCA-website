@@ -110,8 +110,10 @@
   ───────────────────────────────────────────────────────── */
   const pricingBtns = document.querySelectorAll('.pricing-btn')
 
+  let currentBilling = 'monthly'
+
   function setBilling (mode) {
-    // mode: 'monthly' | 'yearly'
+    currentBilling = mode
     pricingBtns.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.billing === mode)
     })
@@ -136,6 +138,11 @@
 
   // Init monthly
   setBilling('monthly')
+
+  // Redirige vers la page d'abonnement Stripe en conservant le mode de facturation
+  window.goToCheckout = function () {
+    window.location.href = '/subscribe.html?billing=' + currentBilling
+  }
 
   /* ─────────────────────────────────────────────────────────
      6. COUNT-UP ANIMATION (IntersectionObserver)
