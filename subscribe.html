@@ -260,7 +260,7 @@
   <a href="https://www.parcoursca.ca" class="back-link">← Retour au site</a>
 
   <div class="sub-card">
-    <div class="popular-badge">LE PLUS POPULAIRE</div>
+    <div class="popular-badge" id="t-badge">LE PLUS POPULAIRE</div>
 
     <div class="pricing-icon">
       <i data-lucide="crown" width="20" height="20"></i>
@@ -278,27 +278,18 @@
 
     <!-- Toggle -->
     <div class="billing-toggle">
-      <button id="btn-monthly" class="active" onclick="setBilling('monthly')">Mensuel</button>
+      <button id="btn-monthly" class="active" onclick="setBilling('monthly')" id="t-monthly">Mensuel</button>
       <button id="btn-yearly" onclick="setBilling('yearly')">
-        Annuel <span class="badge">-17%</span>
+        <span id="t-yearly">Annuel</span> <span class="badge">-17%</span>
       </button>
     </div>
 
-    <!-- Features — 8 fonctionnalités dans le même ordre que la page tarifaire -->
-    <ul class="pricing-features" id="features-list">
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Alertes intelligentes automatiques</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Toutes les provinces couvertes</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Module fiscal complet + rappels</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Consultation comptable intégrée</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Export PDF dossier complet</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Support prioritaire</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Tableau de bord complet</span></li>
-      <li><i data-lucide="check-circle" width="16" height="16"></i><span>Gestion de documents</span></li>
-    </ul>
+    <!-- Features -->
+    <ul class="pricing-features" id="features-list"></ul>
 
     <!-- Email -->
     <div class="form-group">
-      <label for="email">Adresse courriel</label>
+      <label for="email" id="t-email-label">Adresse courriel</label>
       <input type="email" id="email" placeholder="votre@email.com" required />
     </div>
 
@@ -309,9 +300,9 @@
     </button>
 
     <div class="sub-footer">
-      Paiement sécurisé via Stripe · PCI DSS · Annulable en tout temps<br/>
-      <a href="conditions-utilisation.html">Conditions d'utilisation</a> ·
-      <a href="politique-confidentialite.html">Confidentialité</a>
+      <span id="t-footer-secure">Paiement sécurisé via Stripe · PCI DSS · Annulable en tout temps</span><br/>
+      <a href="conditions-utilisation.html" id="t-terms">Conditions d'utilisation</a> ·
+      <a href="politique-confidentialite.html" id="t-privacy">Confidentialité</a>
     </div>
   </div>
 
@@ -323,9 +314,107 @@
   const SUPABASE_URL  = 'https://yugrjudgstnzkumuwknc.supabase.co'
   const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1Z3JqdWRnc3Ruemt1bXV3a25jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3Nzc4OTAsImV4cCI6MjA5MzM1Mzg5MH0.2x4MFQ0vfEMEDcnFwnijUi_fvFSHNBNv7DXMFXL6CQE'
 
+  const T = {
+    fr: {
+      badge:       'LE PLUS POPULAIRE',
+      monthly:     'Mensuel',
+      yearly:      'Annuel',
+      periodMonth: '/mois',
+      periodYear:  '/an',
+      note:        '≈ 8,33 $ / mois · économisez 19,89 $',
+      emailLabel:  'Adresse courriel',
+      placeholder: 'votre@email.com',
+      cta:         "S'abonner maintenant",
+      footer:      'Paiement sécurisé via Stripe · PCI DSS · Annulable en tout temps',
+      terms:       "Conditions d'utilisation",
+      privacy:     'Confidentialité',
+      backLink:    '← Retour au site',
+      errEmail:    'Veuillez entrer une adresse courriel valide.',
+      errServer:   'Une erreur est survenue. Veuillez réessayer.',
+      errNetwork:  'Impossible de joindre le serveur. Vérifiez votre connexion.',
+      features: [
+        'Automatic smart alerts',
+        'All provinces covered',
+        'Full tax module + reminders',
+        'Integrated accounting consultation',
+        'Full file PDF export',
+        'Priority support',
+        'Full dashboard',
+        'Document management',
+      ],
+    },
+    en: {
+      badge:       'MOST POPULAR',
+      monthly:     'Monthly',
+      yearly:      'Annual',
+      periodMonth: '/mo',
+      periodYear:  '/yr',
+      note:        '≈ $8.33 / mo · save $19.89',
+      emailLabel:  'Email address',
+      placeholder: 'your@email.com',
+      cta:         'Subscribe now',
+      footer:      'Secure payment via Stripe · PCI DSS · Cancel anytime',
+      terms:       'Terms of use',
+      privacy:     'Privacy policy',
+      backLink:    '← Back to site',
+      errEmail:    'Please enter a valid email address.',
+      errServer:   'An error occurred. Please try again.',
+      errNetwork:  'Unable to reach the server. Check your connection.',
+      features: [
+        'Automatic smart alerts',
+        'All provinces covered',
+        'Full tax module + reminders',
+        'Integrated accounting consultation',
+        'Full file PDF export',
+        'Priority support',
+        'Full dashboard',
+        'Document management',
+      ],
+    },
+  }
+
+  // FR features
+  T.fr.features = [
+    'Alertes intelligentes automatiques',
+    'Toutes les provinces couvertes',
+    'Module fiscal complet + rappels',
+    'Consultation comptable intégrée',
+    'Export PDF dossier complet',
+    'Support prioritaire',
+    'Tableau de bord complet',
+    'Gestion de documents',
+  ]
+
   const params     = new URLSearchParams(window.location.search)
   const emailParam = params.get('email') || params.get('e') || ''
   if (emailParam) document.getElementById('email').value = emailParam
+
+  // Langue : URL param > localStorage du site > fr par défaut
+  const lang = (params.get('lang') === 'en' || localStorage.getItem('pca-lang') === 'en') ? 'en' : 'fr'
+  const tx   = T[lang]
+
+  // Appliquer les textes
+  function applyLang() {
+    document.documentElement.lang = lang
+    document.getElementById('t-badge').textContent        = tx.badge
+    document.getElementById('btn-monthly').childNodes[0].textContent = tx.monthly
+    document.getElementById('t-yearly').textContent       = tx.yearly
+    document.getElementById('t-email-label').textContent  = tx.emailLabel
+    document.getElementById('email').placeholder          = tx.placeholder
+    document.getElementById('btn-text').textContent       = tx.cta
+    document.getElementById('t-footer-secure').textContent = tx.footer
+    document.getElementById('t-terms').textContent        = tx.terms
+    document.getElementById('t-privacy').textContent      = tx.privacy
+    document.querySelector('.back-link').textContent      = tx.backLink
+
+    // Features
+    const ul = document.getElementById('features-list')
+    ul.innerHTML = tx.features.map(f =>
+      `<li><i data-lucide="check-circle" width="16" height="16"></i><span>${f}</span></li>`
+    ).join('')
+    lucide.createIcons()
+  }
+  applyLang()
 
   let billing = params.get('billing') === 'yearly' ? 'yearly' : 'monthly'
 
@@ -337,18 +426,18 @@
     const note = document.getElementById('price-note')
     if (mode === 'monthly') {
       document.getElementById('price-amount').textContent = '9,99'
-      document.getElementById('price-period').textContent = '/mois'
+      document.getElementById('price-period').textContent = tx.periodMonth
       note.style.display = 'none'
     } else {
       document.getElementById('price-amount').textContent = '99,99'
-      document.getElementById('price-period').textContent = '/an'
-      note.textContent   = '≈ 8,33 $ / mois · économisez 19,89 $'
+      document.getElementById('price-period').textContent = tx.periodYear
+      note.textContent   = tx.note
       note.style.display = 'block'
     }
   }
 
-  // Appliquer le billing depuis URL après que setBilling soit défini
   if (billing === 'yearly') setBilling('yearly')
+  else setBilling('monthly')
 
   async function handleSubscribe() {
     const email = document.getElementById('email').value.trim()

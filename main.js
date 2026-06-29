@@ -139,9 +139,9 @@
   // Init monthly
   setBilling('monthly')
 
-  // Redirige vers la page d'abonnement Stripe en conservant le mode de facturation
+  // Redirige vers la page d'abonnement Stripe en conservant le mode de facturation et la langue
   window.goToCheckout = function () {
-    window.location.href = '/subscribe.html?billing=' + currentBilling
+    window.location.href = '/subscribe.html?billing=' + currentBilling + '&lang=' + currentLang
   }
 
   /* ─────────────────────────────────────────────────────────
